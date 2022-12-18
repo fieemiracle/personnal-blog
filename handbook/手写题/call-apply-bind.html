@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>码上【call，apply，bind】的手写 | fieemiracle的博客</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/personnal-blog/favicon.ico">
+    <meta name="description" content="纸上得来终觉浅，绝知此事要躬行~">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/personnal-blog/assets/css/0.styles.b7fcd70a.css" as="style"><link rel="preload" href="/personnal-blog/assets/js/app.eb925b14.js" as="script"><link rel="preload" href="/personnal-blog/assets/js/3.82b7d1e8.js" as="script"><link rel="preload" href="/personnal-blog/assets/js/1.581215d2.js" as="script"><link rel="preload" href="/personnal-blog/assets/js/44.ed96d3e1.js" as="script"><link rel="prefetch" href="/personnal-blog/assets/js/10.c1074edc.js"><link rel="prefetch" href="/personnal-blog/assets/js/11.580d9231.js"><link rel="prefetch" href="/personnal-blog/assets/js/12.bf4f7a5b.js"><link rel="prefetch" href="/personnal-blog/assets/js/13.ae9a8761.js"><link rel="prefetch" href="/personnal-blog/assets/js/14.52ae5247.js"><link rel="prefetch" href="/personnal-blog/assets/js/15.03a26f1e.js"><link rel="prefetch" href="/personnal-blog/assets/js/16.5b6692de.js"><link rel="prefetch" href="/personnal-blog/assets/js/17.0e9f6058.js"><link rel="prefetch" href="/personnal-blog/assets/js/18.5877e58c.js"><link rel="prefetch" href="/personnal-blog/assets/js/19.736ba708.js"><link rel="prefetch" href="/personnal-blog/assets/js/20.87379000.js"><link rel="prefetch" href="/personnal-blog/assets/js/21.090f5a62.js"><link rel="prefetch" href="/personnal-blog/assets/js/22.25f6087c.js"><link rel="prefetch" href="/personnal-blog/assets/js/23.6f79cf9d.js"><link rel="prefetch" href="/personnal-blog/assets/js/24.8f53790a.js"><link rel="prefetch" href="/personnal-blog/assets/js/25.25acc6cb.js"><link rel="prefetch" href="/personnal-blog/assets/js/26.03692726.js"><link rel="prefetch" href="/personnal-blog/assets/js/27.18c3b62b.js"><link rel="prefetch" href="/personnal-blog/assets/js/28.12adaacd.js"><link rel="prefetch" href="/personnal-blog/assets/js/29.b4c0da75.js"><link rel="prefetch" href="/personnal-blog/assets/js/30.88ab72ba.js"><link rel="prefetch" href="/personnal-blog/assets/js/31.60c833fa.js"><link rel="prefetch" href="/personnal-blog/assets/js/32.103ab689.js"><link rel="prefetch" href="/personnal-blog/assets/js/33.e1013157.js"><link rel="prefetch" href="/personnal-blog/assets/js/34.c9c2ba52.js"><link rel="prefetch" href="/personnal-blog/assets/js/35.e89b1e9d.js"><link rel="prefetch" href="/personnal-blog/assets/js/36.da7f727c.js"><link rel="prefetch" href="/personnal-blog/assets/js/37.d340480c.js"><link rel="prefetch" href="/personnal-blog/assets/js/38.5fd1dc3c.js"><link rel="prefetch" href="/personnal-blog/assets/js/39.e70cb200.js"><link rel="prefetch" href="/personnal-blog/assets/js/4.df85215d.js"><link rel="prefetch" href="/personnal-blog/assets/js/40.2482b706.js"><link rel="prefetch" href="/personnal-blog/assets/js/41.a9cb5d8d.js"><link rel="prefetch" href="/personnal-blog/assets/js/42.09eab8e0.js"><link rel="prefetch" href="/personnal-blog/assets/js/43.d1ef214c.js"><link rel="prefetch" href="/personnal-blog/assets/js/45.6ae3df0e.js"><link rel="prefetch" href="/personnal-blog/assets/js/46.640215d1.js"><link rel="prefetch" href="/personnal-blog/assets/js/47.d6292abe.js"><link rel="prefetch" href="/personnal-blog/assets/js/48.8eebcc95.js"><link rel="prefetch" href="/personnal-blog/assets/js/49.a50e77ae.js"><link rel="prefetch" href="/personnal-blog/assets/js/5.adbb23cc.js"><link rel="prefetch" href="/personnal-blog/assets/js/6.43f51bd5.js"><link rel="prefetch" href="/personnal-blog/assets/js/7.38f27899.js"><link rel="prefetch" href="/personnal-blog/assets/js/8.975d02c6.js"><link rel="prefetch" href="/personnal-blog/assets/js/9.8e043322.js">
+    <link rel="stylesheet" href="/personnal-blog/assets/css/0.styles.b7fcd70a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-7dd95ae2><div data-v-7dd95ae2><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>fieemiracle的博客</h3> <p class="description" data-v-59e6cb88>纸上得来终觉浅，绝知此事要躬行~</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>fieemiracle</span>
+          
+        <!---->
+        2022
+      </a></span></div></div> <div class="hide" data-v-7dd95ae2><header class="navbar" data-v-7dd95ae2><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/personnal-blog/" class="home-link router-link-active"><!----> <span class="site-name">fieemiracle的博客</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/personnal-blog/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      目录
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/字节青训营笔记/" class="nav-link"><i class="undefined"></i>
+  字节青训营笔记
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/ES6/" class="nav-link"><i class="undefined"></i>
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Javascript/" class="nav-link"><i class="undefined"></i>
+  Javascript
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/NodeJS/" class="nav-link"><i class="undefined"></i>
+  NodeJS
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Typescript/" class="nav-link"><i class="undefined"></i>
+  Typescript
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Vue Series/" class="nav-link"><i class="undefined"></i>
+  Vue Series
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/手写题/" class="nav-link"><i class="undefined"></i>
+  手写题
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/面试题/" class="nav-link"><i class="undefined"></i>
+  面试题
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/浏览器/" class="nav-link"><i class="undefined"></i>
+  浏览器
+</a></li></ul></div></div><div class="nav-item"><a href="/personnal-blog/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/personnal-blog/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      简历
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/personnal-blog/views/Resume/resume.html" class="nav-link"><i class="undefined"></i>
+  我的简历
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/fieemiracle" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://leetcode.cn/u/fieemiracle/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  Leetcode
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://juejin.cn/user/3316551988553709/posts" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-juejin"></i>
+  稀土掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/fieemiracle" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://mp.csdn.net/mp_blog/manage/article?spm=1010.2135.3001.5448" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-7dd95ae2></div> <aside class="sidebar" data-v-7dd95ae2><div class="personal-info-wrapper" data-v-1fad0c41 data-v-7dd95ae2><img src="/personnal-blog/avatar.jpg" alt="author-avatar" class="personal-img" data-v-1fad0c41> <h3 class="name" data-v-1fad0c41>
+    fieemiracle
+  </h3> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>39</h3> <h6 data-v-1fad0c41>Articles</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>34</h3> <h6 data-v-1fad0c41>Tags</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><a href="/personnal-blog/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      目录
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/字节青训营笔记/" class="nav-link"><i class="undefined"></i>
+  字节青训营笔记
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/ES6/" class="nav-link"><i class="undefined"></i>
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Javascript/" class="nav-link"><i class="undefined"></i>
+  Javascript
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/NodeJS/" class="nav-link"><i class="undefined"></i>
+  NodeJS
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Typescript/" class="nav-link"><i class="undefined"></i>
+  Typescript
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Vue Series/" class="nav-link"><i class="undefined"></i>
+  Vue Series
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/手写题/" class="nav-link"><i class="undefined"></i>
+  手写题
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/面试题/" class="nav-link"><i class="undefined"></i>
+  面试题
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/浏览器/" class="nav-link"><i class="undefined"></i>
+  浏览器
+</a></li></ul></div></div><div class="nav-item"><a href="/personnal-blog/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/personnal-blog/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      简历
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/personnal-blog/views/Resume/resume.html" class="nav-link"><i class="undefined"></i>
+  我的简历
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/fieemiracle" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://leetcode.cn/u/fieemiracle/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  Leetcode
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://juejin.cn/user/3316551988553709/posts" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-juejin"></i>
+  稀土掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/fieemiracle" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://mp.csdn.net/mp_blog/manage/article?spm=1010.2135.3001.5448" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>码上【call，apply，bind】的手写</h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>fieemiracle</span>
+          
+        <!---->
+        2022
+      </a></span></div></div> <div data-v-7dd95ae2><div data-v-7dd95ae2><main class="page"><section style="display:;"><div class="page-title"><h1 class="title">码上【call，apply，bind】的手写</h1> <div data-v-8a445198><i class="iconfont reco-account" data-v-8a445198><span data-v-8a445198>fieemiracle</span></i> <i class="iconfont reco-date" data-v-8a445198><span data-v-8a445198>12/2/2022</span></i> <i class="iconfont reco-eye" data-v-8a445198><span id="/personnal-blog/handbook/%E6%89%8B%E5%86%99%E9%A2%98/call-apply-bind.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-8a445198><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="tags iconfont reco-tag" data-v-8a445198><span class="tag-item" data-v-8a445198>手写题</span></i></div></div> <div class="theme-reco-content content__default"><hr> <h2 id="highlight-a11y-darktheme-healer-readable"><a href="#highlight-a11y-darktheme-healer-readable" class="header-anchor">#</a> highlight: a11y-dark
+theme: healer-readable</h2> <p><em><strong>本文正在参加<a href="https://juejin.cn/post/7162096952883019783" title="https://juejin.cn/post/7162096952883019783" target="_blank" rel="noopener noreferrer">「金石计划 . 瓜分6万现金大奖」<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></strong></em></p> <h2 id="一、call"><a href="#一、call" class="header-anchor">#</a> 一、call</h2> <h3 id="_1-官方用法"><a href="#_1-官方用法" class="header-anchor">#</a> （1）官方用法</h3> <p><strong><code>call()</code></strong> 方法使用一个指定的 <code>this</code> 值和单独给出的一个或多个参数来调用一个函数。</p> <p>语法：function.call(要绑定的this值，参数，参数，...)。不一定这些参数都需要，这些参数都是可选的，返回值：使用调用者提供的 <code>this</code> 值和参数调用该函数的返回值。若该方法没有返回值，则返回 <code>undefined</code>。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 不指定参数
+var nickname = 'global'
+​
+function getName() {
+    console.log(this.nickname);
+}
+getName() //global
+getName.call() //global
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>在严格模式下，<code>this</code> 的值将会是 <code>undefined</code>。当不给<code>call</code>指定参数时，相当于将不改变<code>this</code>的指向，在哪调用的就指向哪儿，即没有传递第一个参数，<code>this</code>的值将会被绑定为全局对象。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 指定第一个参数
+var name = 'cat'
+var obj = {
+    name: 'dog'
+}
+​
+function getName() {
+    console.log(this.name);
+}
+getName() //cat
+getName.call(obj) //dog
+console.log(obj)//{ name: 'dog'}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>当指定第一个参数时，第一个参数代表新的<code>this</code>值，当调用方法时，该方法的<code>this</code>值会绑定到<code>obj</code>对象，于是会访问这个对象的<code>name</code>属性。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>//指定第一个参数和其他参数
+var obj = {
+    user: 'Ducky',
+    fn: function(a, b) {
+        console.log(a + b);
+        console.log(this.user);
+    }
+}
+var b = obj.fn;
+b.call(obj, 1, 2);
+// 3
+// Ducky
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>除了第一个参数，其余参数都是用来做一些必要的运算等。运行到这，应该不难发现，使用<code>Function.call()</code>的时候，函数是谁执行的？是使用<code>call</code>绑定对象的之后，<code>call</code>也把函数执行了。</p> <p>相信你已经会用了，试着写写实现原理。</p> <h3 id="_2-实现原理"><a href="#_2-实现原理" class="header-anchor">#</a> （2）实现原理</h3> <p>实现<code>call</code>的关键在于：</p> <p>第一：如何给函数绑定新的<code>this</code>？</p> <p>第二：如何在绑定完<code>this</code>后把函数也给执行完毕？</p> <p>掌握了这两个关键，那么一切都有迹可循了。接下来看看换成自己手写的是不是一样的效果：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>Function.prototype.my_call = function(context) {
+    // 如何实现绑定新的this
+    context.fn = this //context['fn']=this
+    // 如何在调用call时把调用call的函数也执行
+    context.fn()
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>是不是大吃一惊？就实现了？是的，就是实现了，核心原理就是这两个关键，不信可以测试一下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>var name = 'cat'
+var obj = {
+    name: 'dog'
+}
+​
+function getName() {
+    console.log(this.name);
+}
+getName() //cat
+getName.my_call(obj) //dog
+console.log(obj)//{ name: 'dog', fn: [Function: getName] }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>真的绑定成功了！接下来继续做点优化，优化也有几个关键点：</p> <p>第一：非得是函数才可以调用<code>call</code>；</p> <p>第二：<code>call</code>除了接收第一个参数（新的<code>this</code>）外，还可以接收一个参数列表；</p> <p>第三：官方<code>call</code>调用后，不会改变新的<code>this</code>（<code>obj</code>）的结构，在上述代码中<code>obj</code>内部新增了一个属性<code>fn</code>；</p> <p>第四：当<code>call</code>不传第一个参数时，需指向全局对象（<code>window</code>）；</p> <p>第五：调用<code>call</code>时，需得有返回值；</p> <p>第六：当将<code>this</code>挂载到新的<code>this</code>上时，后者已经存在该属性的情况下，还是会改变后者的结构。</p> <p>终极实现原理：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>Function.prototype.my_call = function(context, ...args) {
+    if (typeof this !== 'function') throw new TypeError('error')
+    context = context || 'window'
+    let fn = Symbol('fn')
+    context[fn] = this //context.fn = this 
+    const res = context[fn](...args)
+    delete context[fn]
+    return res
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>虽然考虑了六种情况，但是代码还是很可人，这回，它就是与官方的源码一样的效果和功能了，简直不要太完美~</p> <h2 id="二、apply"><a href="#二、apply" class="header-anchor">#</a> 二、apply</h2> <h3 id="_1-官方用法-2"><a href="#_1-官方用法-2" class="header-anchor">#</a> （1）官方用法</h3> <p><code>apply()</code> 方法调用一个具有给定 <code>this</code> 值的函数，以及以一个数组（或一个类数组对象）的形式提供的参数。</p> <p>语法：function.apply(要绑定的<code>this</code>的值，[参数，参数，参数，...])，返回值：调用有指定 <strong><code>this</code></strong> 值和参数的函数的结果。</p> <p>可见，它跟<code>call</code>就只有一个区别：提供参数的方式不同。<code>apply</code> 使用参数数组而不是一组参数列表。<code>apply</code> 可以使用数组字面量（array literal），如 <code>fun.apply(this, ['dog', 'cat'])</code>，或数组对象，如 <code>fun.apply(this, new Array('dog', 'cat'))</code>，还可以使用 <code>arguments</code> 对象作为 <code>argsArray</code> 参数。<code>arguments</code> 是一个函数的局部变量。它可以被用作被调用对象的所有未指定的参数。这样，在使用 <code>apply</code> 函数的时候就不需要知道被调用对象的所有参数及其个数。可以直接使用 arguments 来把所有的参数传递给被调用对象。被调用对象接下来就负责处理这些参数，要解构，要切割，要指定索引都可以。</p> <p>既然<code>apply</code>的用法和<code>call</code>几乎相同，只是除第一个参数外，其余参数传递方式不一样，那么我们直接在<code>my_call</code>的手写上修改传递参数的形式即可。</p> <h3 id="_2-实现原理-2"><a href="#_2-实现原理-2" class="header-anchor">#</a> （2）实现原理</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>Function.prototype.my_apply = function(context, args) {
+    if (typeof this !== 'function') throw new TypeError('error')
+    context = context || 'window'
+    let fn = Symbol('fn')
+    context[fn] = this //context.fn = this 
+    const res = context[fn](...args)
+    delete context[fn]
+    return res
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>这。。。。，还是测试一下吧：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>var obj = {
+    user: 'Ducky',
+    fn: function(a, b) {
+        console.log(a + b);
+        console.log(this.user);
+    }
+}
+var b = obj.fn;
+b.my_apply(obj, [1, 2]);
+// 3
+// Ducky
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>好了，成功了，该考虑的已经在手写<code>call</code>的时候考虑过了，就是这么的干净利落。</p> <h2 id="三、bind"><a href="#三、bind" class="header-anchor">#</a> 三、bind</h2> <h3 id="_1-官方用法-3"><a href="#_1-官方用法-3" class="header-anchor">#</a> （1）官方用法</h3> <p><strong><code>bind()</code></strong> 方法创建一个新的函数，在 <code>bind()</code> 被调用时，这个新函数的 <code>this</code> 被指定为 <code>bind()</code> 的第一个参数，而其余参数将作为新函数的参数，提供调用时使用。</p> <p>语法：function.bind(要绑定的<code>this</code>值，参数1，参数2，参数3)。</p> <p>这里说明，第一个参数是如果为空，或者为<code>null||undefined</code>，执行作用域的<code>this</code>将被视为形函数的的<code>this</code>值，其余参数（当目标函数被调用时，被预置入绑定函数的参数列表中的参数）可有可无，也可在返回的新函数里面传递。返回值是返回一个原函数的拷贝，并拥有指定的 <strong><code>this</code></strong> 值和初始参数。</p> <p>举个例子：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>var name = 'cat'
+var obj = {
+    name: 'dog',
+    fn: foo
+}
+function foo(a, b) {
+    console.log(this.name, a + b);
+    return a + b
+}
+const bar = foo.bind(obj)
+bar(3, 4)
+//dog 7
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h3 id="_2-实现原理-3"><a href="#_2-实现原理-3" class="header-anchor">#</a> （2）实现原理</h3> <p>从上述例子可以看出，<code>bind()</code>会创建一个新的绑定函数<code>bar</code>。</p> <p>实现<code>bind</code>函数的关键在于：</p> <p>第一：如何新建一个绑定函数；</p> <p>第二：如何将拿到在<code>call（）</code>传递的参数和调用新建的绑定函数传递的参数并结合</p> <p>第三：如果使用<code>new</code>操作符操作新建的那个绑定函数，<code>this</code>又该如何指向</p> <p>先讨论以下前两个关键，新建一个绑定函数直接在<code>call</code>内部返回一个函数即可，将两个地方的传递的参数都传递给执行绑定函数。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>Function.prototype.my_bind = function(context, ...args1) {
+    // 保存外部函数的this
+    const _this = this
+    return function bound(...args2) {//返回一个新函数
+        //返回值
+        return _this.call(context, ...args1, ...args2)
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>不要惊讶在实现<code>bind</code>函数内部用的是<code>call||apply</code>，大不了用刚刚手写的<code>my_call||my_apply</code>。大体上就实现了，测试一下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>var name = 'cat'
+var obj = {
+    name: 'dog',
+    fn: foo
+}
+​
+function foo(a, b) {
+    console.log(this.name, a + b);
+    return a + b
+}
+const bar = foo.my_bind(obj)
+bar(3, 4)
+//dog 7
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>再来考虑第三个问题：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>//官方bind
+const bar = foo.bind(obj)
+new bar(3, 4)//cat 7
+​
+//手写的my_bing
+const bar = foo.my_bind(obj)
+new bar(3, 4) //dog 7
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>从上可以看出，当使用<code>new</code>操作符操作新的函数<code>bar</code>时，官方的<code>bind</code>会忽略绑定的<code>this</code>值，但是前置参数依然会提供给铭记函数，而我们手写的<code>my_bind</code>原封不动，这肯定得改！</p> <p>现在无非是，当使用<code>new</code>运算符构造新建的绑定函数<code>bar</code>时，<code>foo.bind(obj)</code>中，<code>foo</code>的·<code>this</code>指向不指向<code>obj</code>，也不指向全局对象，而是会指向实例对象<code>new bar()</code>的执行作用域，接下来可以理一下思路：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>//目标：(new bar)._proto_==foo.prototype
+//即如果新建的绑定函数被new，bind的调用函数就会变成实力对象的构造函数
+​
+//接下来的操作都是在my_bind函数内部操作
+//借助一个辅助函数
+const help=function(){}
+bound.prototype=new help()//继承到了foo（bind的调用函数）的原型
+if(this.prototype){//this指的是bind的调用函数
+   help.prototype=this.prototype
+ }
+​
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>通过一通操作，得到<code>new help()._proto_==help.prototype=this.prototype==bound.prototype</code>，<code>this</code>是什么，取决于调用<code>bind</code>函数的函数是什么，在这里是<code>foo</code>，所以<code>new bound()._proto_==bound.prototype=foo.prototype</code>，那么，调用<code>bind</code>函数的<code>this</code>到底指向什么取决于，新建的绑定函数<code>bar</code>有没有被<code>new</code>，如果没有，则看传递的第一个参数，第一个参数为空则为全局对象，不为空则为指定的对象；如果被<code>new</code>了，那么调用<code>nind</code>函数的<code>this</code>指向新建的绑定函数的执行作用域，<code>bind</code>最终实现方式是：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>Function.prototype.my_bind = function(context, ...args1) {
+    if (typeof this !== 'function') {
+        throw new TypeError('error')
+    }
+    context = context || window
+    const _this = this
+    const help = function() {}
+    if (this.prototype) {
+        help.prototype = this.prototype
+    }
+    const bound = function(...args2) {
+        return _this.call(
+            this instanceof help ? this : context,...args1,...args2)
+    }
+    bound.prototype = new help()
+    return bound
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">12/18/2022, 7:24:59 PM</span></div></footer> <!----> <div class="comments-wrapper"><!----></div></main></div> <!----></div> <ul class="sub-sidebar sub-sidebar-wrapper" style="width:12rem;" data-v-b57cc07c data-v-7dd95ae2><li class="level-2" data-v-b57cc07c><a href="/personnal-blog/handbook/%E6%89%8B%E5%86%99%E9%A2%98/call-apply-bind.html#highlight-a11y-darktheme-healer-readable" class="sidebar-link reco-side-highlight-a11y-darktheme-healer-readable" data-v-b57cc07c>highlight: a11y-dark
+theme: healer-readable</a></li><li class="level-2" data-v-b57cc07c><a href="/personnal-blog/handbook/%E6%89%8B%E5%86%99%E9%A2%98/call-apply-bind.html#一、call" class="sidebar-link reco-side-一、call" data-v-b57cc07c>一、call</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/%E6%89%8B%E5%86%99%E9%A2%98/call-apply-bind.html#_1-官方用法" class="sidebar-link reco-side-_1-官方用法" data-v-b57cc07c>（1）官方用法</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/%E6%89%8B%E5%86%99%E9%A2%98/call-apply-bind.html#_2-实现原理" class="sidebar-link reco-side-_2-实现原理" data-v-b57cc07c>（2）实现原理</a></li><li class="level-2" data-v-b57cc07c><a href="/personnal-blog/handbook/%E6%89%8B%E5%86%99%E9%A2%98/call-apply-bind.html#二、apply" class="sidebar-link reco-side-二、apply" data-v-b57cc07c>二、apply</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/%E6%89%8B%E5%86%99%E9%A2%98/call-apply-bind.html#_1-官方用法-2" class="sidebar-link reco-side-_1-官方用法-2" data-v-b57cc07c>（1）官方用法</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/%E6%89%8B%E5%86%99%E9%A2%98/call-apply-bind.html#_2-实现原理-2" class="sidebar-link reco-side-_2-实现原理-2" data-v-b57cc07c>（2）实现原理</a></li><li class="level-2" data-v-b57cc07c><a href="/personnal-blog/handbook/%E6%89%8B%E5%86%99%E9%A2%98/call-apply-bind.html#三、bind" class="sidebar-link reco-side-三、bind" data-v-b57cc07c>三、bind</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/%E6%89%8B%E5%86%99%E9%A2%98/call-apply-bind.html#_1-官方用法-3" class="sidebar-link reco-side-_1-官方用法-3" data-v-b57cc07c>（1）官方用法</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/%E6%89%8B%E5%86%99%E9%A2%98/call-apply-bind.html#_2-实现原理-3" class="sidebar-link reco-side-_2-实现原理-3" data-v-b57cc07c>（2）实现原理</a></li></ul></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:190px;display:none;" data-v-5775ee02>
+      我是bookbook,欢迎你的关注 
+    </div> <div class="operation" style="right:90px;bottom:40px;display:;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:;" data-v-5775ee02></i></div> <canvas id="banniang" width="150" height="219" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div><div class="reco-bgm-panel" data-v-b1d3339e><audio id="bgm" src="https://assets.smallsunnyfox.com/music/2.mp3" data-v-b1d3339e></audio> <div class="reco-float-box" style="bottom:200px;z-index:999999;display:none;" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><img src="https://p1.music.126.net/Gxv6d9W4Yd9q9WNHPpi8rw==/1379887104073348.jpg" data-v-b1d3339e></div> <div class="reco-bgm-box" style="left:10px;bottom:10px;z-index:999999;" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><div class="reco-bgm-cover" style="background-image:url(https://p1.music.126.net/Gxv6d9W4Yd9q9WNHPpi8rw==/1379887104073348.jpg);" data-v-b1d3339e><div class="mini-operation" style="display:none;" data-v-b1d3339e><i class="reco-bgm reco-bgm-pause" style="display:none;" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-play" style="display:none;" data-v-b1d3339e></i></div> <div class="falut-message" style="display:none;" data-v-b1d3339e>
+          播放失败
+        </div></div> <div class="reco-bgm-info" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><div class="info-box" data-v-b1d3339e><i class="reco-bgm reco-bgm-music music" data-v-b1d3339e></i>Faster Than Light</div> <div class="info-box" data-v-b1d3339e><i class="reco-bgm reco-bgm-artist" data-v-b1d3339e></i>Andreas Waldetoft / Mia Stegmar</div> <div class="reco-bgm-progress" data-v-b1d3339e><div class="progress-bar" data-v-b1d3339e><div class="bar" data-v-b1d3339e></div></div></div> <div class="reco-bgm-operation" data-v-b1d3339e><i class="reco-bgm reco-bgm-last last" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-pause pause" style="display:none;" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-play play" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-next next" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-volume1 volume" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-mute mute" style="display:none;" data-v-b1d3339e></i> <div class="volume-bar" data-v-b1d3339e><div class="bar" data-v-b1d3339e></div></div></div></div> <div class="reco-bgm-left-box" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><i class="reco-bgm reco-bgm-left" data-v-b1d3339e></i></div></div></div><div></div><canvas id="vuepress-canvas-cursor"></canvas><!----><div class="RibbonAnimation"></div></div></div>
+    <script src="/personnal-blog/assets/js/app.eb925b14.js" defer></script><script src="/personnal-blog/assets/js/3.82b7d1e8.js" defer></script><script src="/personnal-blog/assets/js/1.581215d2.js" defer></script><script src="/personnal-blog/assets/js/44.ed96d3e1.js" defer></script>
+  </body>
+</html>

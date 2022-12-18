@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Typescript类型|学习笔记 | fieemiracle的博客</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/personnal-blog/favicon.ico">
+    <meta name="description" content="纸上得来终觉浅，绝知此事要躬行~">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/personnal-blog/assets/css/0.styles.b7fcd70a.css" as="style"><link rel="preload" href="/personnal-blog/assets/js/app.eb925b14.js" as="script"><link rel="preload" href="/personnal-blog/assets/js/3.82b7d1e8.js" as="script"><link rel="preload" href="/personnal-blog/assets/js/1.581215d2.js" as="script"><link rel="preload" href="/personnal-blog/assets/js/38.5fd1dc3c.js" as="script"><link rel="prefetch" href="/personnal-blog/assets/js/10.c1074edc.js"><link rel="prefetch" href="/personnal-blog/assets/js/11.580d9231.js"><link rel="prefetch" href="/personnal-blog/assets/js/12.bf4f7a5b.js"><link rel="prefetch" href="/personnal-blog/assets/js/13.ae9a8761.js"><link rel="prefetch" href="/personnal-blog/assets/js/14.52ae5247.js"><link rel="prefetch" href="/personnal-blog/assets/js/15.03a26f1e.js"><link rel="prefetch" href="/personnal-blog/assets/js/16.5b6692de.js"><link rel="prefetch" href="/personnal-blog/assets/js/17.0e9f6058.js"><link rel="prefetch" href="/personnal-blog/assets/js/18.5877e58c.js"><link rel="prefetch" href="/personnal-blog/assets/js/19.736ba708.js"><link rel="prefetch" href="/personnal-blog/assets/js/20.87379000.js"><link rel="prefetch" href="/personnal-blog/assets/js/21.090f5a62.js"><link rel="prefetch" href="/personnal-blog/assets/js/22.25f6087c.js"><link rel="prefetch" href="/personnal-blog/assets/js/23.6f79cf9d.js"><link rel="prefetch" href="/personnal-blog/assets/js/24.8f53790a.js"><link rel="prefetch" href="/personnal-blog/assets/js/25.25acc6cb.js"><link rel="prefetch" href="/personnal-blog/assets/js/26.03692726.js"><link rel="prefetch" href="/personnal-blog/assets/js/27.18c3b62b.js"><link rel="prefetch" href="/personnal-blog/assets/js/28.12adaacd.js"><link rel="prefetch" href="/personnal-blog/assets/js/29.b4c0da75.js"><link rel="prefetch" href="/personnal-blog/assets/js/30.88ab72ba.js"><link rel="prefetch" href="/personnal-blog/assets/js/31.60c833fa.js"><link rel="prefetch" href="/personnal-blog/assets/js/32.103ab689.js"><link rel="prefetch" href="/personnal-blog/assets/js/33.e1013157.js"><link rel="prefetch" href="/personnal-blog/assets/js/34.c9c2ba52.js"><link rel="prefetch" href="/personnal-blog/assets/js/35.e89b1e9d.js"><link rel="prefetch" href="/personnal-blog/assets/js/36.da7f727c.js"><link rel="prefetch" href="/personnal-blog/assets/js/37.d340480c.js"><link rel="prefetch" href="/personnal-blog/assets/js/39.e70cb200.js"><link rel="prefetch" href="/personnal-blog/assets/js/4.df85215d.js"><link rel="prefetch" href="/personnal-blog/assets/js/40.2482b706.js"><link rel="prefetch" href="/personnal-blog/assets/js/41.a9cb5d8d.js"><link rel="prefetch" href="/personnal-blog/assets/js/42.09eab8e0.js"><link rel="prefetch" href="/personnal-blog/assets/js/43.d1ef214c.js"><link rel="prefetch" href="/personnal-blog/assets/js/44.ed96d3e1.js"><link rel="prefetch" href="/personnal-blog/assets/js/45.6ae3df0e.js"><link rel="prefetch" href="/personnal-blog/assets/js/46.640215d1.js"><link rel="prefetch" href="/personnal-blog/assets/js/47.d6292abe.js"><link rel="prefetch" href="/personnal-blog/assets/js/48.8eebcc95.js"><link rel="prefetch" href="/personnal-blog/assets/js/49.a50e77ae.js"><link rel="prefetch" href="/personnal-blog/assets/js/5.adbb23cc.js"><link rel="prefetch" href="/personnal-blog/assets/js/6.43f51bd5.js"><link rel="prefetch" href="/personnal-blog/assets/js/7.38f27899.js"><link rel="prefetch" href="/personnal-blog/assets/js/8.975d02c6.js"><link rel="prefetch" href="/personnal-blog/assets/js/9.8e043322.js">
+    <link rel="stylesheet" href="/personnal-blog/assets/css/0.styles.b7fcd70a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-7dd95ae2><div data-v-7dd95ae2><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>fieemiracle的博客</h3> <p class="description" data-v-59e6cb88>纸上得来终觉浅，绝知此事要躬行~</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>fieemiracle</span>
+          
+        <!---->
+        2022
+      </a></span></div></div> <div class="hide" data-v-7dd95ae2><header class="navbar" data-v-7dd95ae2><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/personnal-blog/" class="home-link router-link-active"><!----> <span class="site-name">fieemiracle的博客</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/personnal-blog/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      目录
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/字节青训营笔记/" class="nav-link"><i class="undefined"></i>
+  字节青训营笔记
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/ES6/" class="nav-link"><i class="undefined"></i>
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Javascript/" class="nav-link"><i class="undefined"></i>
+  Javascript
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/NodeJS/" class="nav-link"><i class="undefined"></i>
+  NodeJS
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Typescript/" class="nav-link"><i class="undefined"></i>
+  Typescript
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Vue Series/" class="nav-link"><i class="undefined"></i>
+  Vue Series
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/手写题/" class="nav-link"><i class="undefined"></i>
+  手写题
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/面试题/" class="nav-link"><i class="undefined"></i>
+  面试题
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/浏览器/" class="nav-link"><i class="undefined"></i>
+  浏览器
+</a></li></ul></div></div><div class="nav-item"><a href="/personnal-blog/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/personnal-blog/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      简历
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/personnal-blog/views/Resume/resume.html" class="nav-link"><i class="undefined"></i>
+  我的简历
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/fieemiracle" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://leetcode.cn/u/fieemiracle/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  Leetcode
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://juejin.cn/user/3316551988553709/posts" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-juejin"></i>
+  稀土掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/fieemiracle" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://mp.csdn.net/mp_blog/manage/article?spm=1010.2135.3001.5448" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-7dd95ae2></div> <aside class="sidebar" data-v-7dd95ae2><div class="personal-info-wrapper" data-v-1fad0c41 data-v-7dd95ae2><img src="/personnal-blog/avatar.jpg" alt="author-avatar" class="personal-img" data-v-1fad0c41> <h3 class="name" data-v-1fad0c41>
+    fieemiracle
+  </h3> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>39</h3> <h6 data-v-1fad0c41>Articles</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>34</h3> <h6 data-v-1fad0c41>Tags</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><a href="/personnal-blog/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      目录
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/字节青训营笔记/" class="nav-link"><i class="undefined"></i>
+  字节青训营笔记
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/ES6/" class="nav-link"><i class="undefined"></i>
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Javascript/" class="nav-link"><i class="undefined"></i>
+  Javascript
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/NodeJS/" class="nav-link"><i class="undefined"></i>
+  NodeJS
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Typescript/" class="nav-link"><i class="undefined"></i>
+  Typescript
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Vue Series/" class="nav-link"><i class="undefined"></i>
+  Vue Series
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/手写题/" class="nav-link"><i class="undefined"></i>
+  手写题
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/面试题/" class="nav-link"><i class="undefined"></i>
+  面试题
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/浏览器/" class="nav-link"><i class="undefined"></i>
+  浏览器
+</a></li></ul></div></div><div class="nav-item"><a href="/personnal-blog/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/personnal-blog/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      简历
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/personnal-blog/views/Resume/resume.html" class="nav-link"><i class="undefined"></i>
+  我的简历
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/fieemiracle" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://leetcode.cn/u/fieemiracle/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  Leetcode
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://juejin.cn/user/3316551988553709/posts" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-juejin"></i>
+  稀土掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/fieemiracle" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://mp.csdn.net/mp_blog/manage/article?spm=1010.2135.3001.5448" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>Typescript类型|学习笔记</h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>fieemiracle</span>
+          
+        <!---->
+        2022
+      </a></span></div></div> <div data-v-7dd95ae2><div data-v-7dd95ae2><main class="page"><section style="display:;"><div class="page-title"><h1 class="title">Typescript类型|学习笔记</h1> <div data-v-8a445198><i class="iconfont reco-account" data-v-8a445198><span data-v-8a445198>fieemiracle</span></i> <i class="iconfont reco-date" data-v-8a445198><span data-v-8a445198>10/9/2022</span></i> <i class="iconfont reco-eye" data-v-8a445198><span id="/personnal-blog/handbook/Typescript/ts-type.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-8a445198><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="tags iconfont reco-tag" data-v-8a445198><span class="tag-item" data-v-8a445198>类型</span></i></div></div> <div class="theme-reco-content content__default"><p>持续创作，加速成长！这是我参与「掘金日新计划 · 10 月更文挑战」的第1天，<a href="https://juejin.cn/post/7147654075599978532" title="https://juejin.cn/post/7147654075599978532" target="_blank" rel="noopener noreferrer">点击查看活动详情<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="一、认识typescript"><a href="#一、认识typescript" class="header-anchor">#</a> 一、认识Typescript</h2> <p>(1)Javascript是一种动态类型的弱类型语言</p> <p>Javascript超集： A.包含与兼容所有JS特性，支持共存 B.支持渐进式引入与升级</p> <p>(2)TypeScript是一种静态类型的弱类型语言</p> <p>静态类型的优点：</p> <p>A.可读性增强：基于语法解析TSDoc,ide增强</p> <p>B.可维护性增强：在编译阶段暴露大部分错误=&gt;多人合作大型项目中，可以获得更好的稳定性和开发效率</p> <p>(3)Typescript是Javascript的超集，具有可选的类型并可以编译成纯JS</p> <h2 id="二、typescript优缺点"><a href="#二、typescript优缺点" class="header-anchor">#</a> 二、Typescript优缺点</h2> <h3 id="_1、优点"><a href="#_1、优点" class="header-anchor">#</a> 1、优点：</h3> <p>（1）增强代码的可维护性，尤其在大型项目开发中效果显著</p> <p>（2）友好地在编译器提示错误，在编译阶段就能检查类型，发现大部分错误</p> <p>（3）支持最新的JS的特性</p> <p>（4）繁荣的生态圈，typescript被普遍使用，多种框架都支持，尤其是Vue3</p> <h3 id="_2、缺点"><a href="#_2、缺点" class="header-anchor">#</a> 2、缺点：</h3> <p>（1）插件库兼容不够完美 ​</p> <p>（2）增加前期开发成本</p> <h2 id="三、运行typescript"><a href="#三、运行typescript" class="header-anchor">#</a> 三、运行Typescript</h2> <p>例如，创建一个test.ts文件，</p> <p>（1）npm i -g typescript</p> <p>tsc -v 查看tsc版本</p> <p>tsc --init 初始化 使用命令：tsc test.ts ,可将TS文件转化为JS文件</p> <p>（2）npm i -g ts-node 使用命令：ts-node test.ts 可以直接执行TS文件</p> <p>（3）npm i -D tslib @types/node 如果（2）之后运行还会报错，就再安装（3）</p> <h2 id="四、基本类型"><a href="#四、基本类型" class="header-anchor">#</a> 四、基本类型</h2> <h3 id="_1、非typescript新增类型"><a href="#_1、非typescript新增类型" class="header-anchor">#</a> 1、非Typescript新增类型</h3> <p>（1）boolean（布尔值）</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// boolean
+const isRight: boolean = true;
+const isleft: boolean = false;
+console.log(isRight, isleft);//true false
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>（2）number（数字）</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// number
+let numberOne: number = 123;
+let numberTwo: number = 999;
+console.log(numberOne, numberTwo);//123 999
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>（3）string（字符串）</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// string
+let yourName: string = 'baby',
+    yourGender: string = 'female';
+console.log(yourName, yourGender);//baby female
+let adult: string = `your name is ${yourName},your sex is ${yourGender}`;//模板字符串
+console.log(adult);//your name is baby,your sex is female
+let another: string = &quot;my name is &quot; + yourName + &quot;my gender is &quot; + yourGender;//字符串拼接
+console.log(another);//my name is babymy gender is female
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>（4）Array（数组）</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// Array
+let isArray1: string[] = ['1', '2', '3'];//string[]
+console.log(isArray1);//[ '1', '2', '3' ]
+let isArray2: number[] = [1, 2, 3];//number[]
+console.log(isArray2);//[ 1, 2, 3 ]
+let isArray3: Array&lt;number&gt; = [1, 2, 3];//数组泛型：Array&lt;number&gt;
+console.log(isArray3);//[ 1, 2, 3 ]
+let isArray4: Array&lt;string&gt; = ['1', '2', '3'];//数组泛型：Array&lt;string&gt;
+console.log(isArray4);//[ '1', '2', '3' ]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>（5）null</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// null
+const nl: null = null;
+console.log(nl);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>（6）undefined</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// undefined
+const und: undefined = undefined;
+console.log(und);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>默认情况下<code>null</code>和<code>undefined</code>是所有类型的子类型。 就是说你可以把 <code>null</code>和<code>undefined</code>赋值给<code>number|string</code>等类型的变量。</p> <p>（7）Object（对象）</p> <p><code>object</code>表示非原始类型，也就是除<code>number</code>，<code>string</code>，<code>boolean</code>，<code>symbol</code>，<code>null</code>或<code>undefined</code>之外的类型。使用<code>object</code>类型，就可以更好的表示像<code>Object.create</code>这样的API。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 对象类型
+let myObject:object = {};
+​
+// 非严格模式下，可以这样；严格模式下，myObject不能被重新赋值
+myObject=undefined;
+myObject=null;
+​
+// Object有用内置对象
+let bigObject:Object = {};
+bigObject=1;
+bigObject='a'
+bigObject=true
+bigObject=undefined
+bigObject=null
+​
+// 空对象类型
+let emptyObject:{} = {};
+emptyObject=1
+emptyObject='a'
+emptyObject=true
+emptyObject=undefined
+emptyObject=null
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><p>（8）Function（函数）</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 函数
+function add(x:number,y:number):number{//两个参数
+    return x+y
+}
+function subtract(...number:number[]):number{//多个参数
+    let sum=0;
+    for(let i=0;i&lt;number.length;i++) sum+=number[i]
+    return sum;
+}
+const minus=function(x:number,y:number):number{//函数另一个表示方式
+    return x-y
+}
+const multiply=function(x:number,y:number,z?:number):number{//三个参数
+    return z?x*y*z:x*y
+}
+multiply(1,2)
+function defaultFun(x: number, y: number=0): number {
+    return x/y
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><h3 id="_2、typescript新增类型"><a href="#_2、typescript新增类型" class="header-anchor">#</a> 2、Typescript新增类型</h3> <p>（1）Tuple（元祖）</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// Tuple（元祖）:允许表示一个已知元素数量和类型的数组，各元素的类型不必相同
+//定义myTuple的第一个元素只能是字符串，第二个只能是数字
+let myTuple: [string, number];
+myTuple = ['hello', 10]; // OK
+// myTuple = [10, 'hello']; // error
+​
+//访问元素，当访问不存在的元素时，会报错
+console.log(myTuple[0]);//hello
+myTuple[0] = 'hello world';
+console.log(myTuple);//[ 'hello world', 10 ]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>（2）enum（枚举类型）</p> <p>普通枚举：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// enum（枚举类型）：支持枚举值到枚举名的正反向映射
+enum Operate {
+    add = '+',
+    mult = '*'
+}
+console.log(Operate['add'] === '+');//true
+console.log(Operate['+'] === 'add');//false
+let operation: Operate = Operate.add;
+console.log(operation);//+
+​
+enum Mycolor {
+    red, yellow, blue
+}
+console.log(Mycolor['red'] === 0);//true
+console.log(Mycolor[0] === 'red');//true
+let myCol: Mycolor = Mycolor.yellow;
+let hisCol: string = Mycolor[1]
+console.log(myCol, hisCol);//1 yellow
+​
+// 默认值
+enum People {
+    Linda = 1,
+    Jhon,
+    Lihua
+}
+let per: string = People[2];
+console.log(per);//Jhon
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><p>枚举类型的字符串枚举和常量枚举：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 字符串枚举
+enum Person {
+    name = 'Lucky',
+    age = 19,
+    sex = 'female'
+}
+const pname: Person = Person.name,
+    page: Person = Person.age;
+console.log(pname, page);//Lucky 19
+​
+// 常量枚举
+const enum Student {
+    sname,
+    sage,
+    ssex
+}
+const student: Student[] = [Student.sname, Student.sage, Student.ssex];
+console.log(student);//[ 0, 1, 2 ]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p>（3）any（任意类型）</p> <p>any：表示任意类型， 可以被任何类型分配，也可以分配给任何类型;任意类型，是所有类型的子类型</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>//把any类型分配给其他类型
+let otherType1: any
+let otherType2: any = otherType1;
+let otherType3: unknown = otherType1;
+let otherType4: void = otherType1;
+​
+let otherType5: undefined = otherType1;
+let otherType6: null = otherType1;
+let otherType7: number = otherType1;
+let otherType8: string = otherType1;
+let otherType9: boolean = otherType1;
+// 报错:不能将类型“any”分配给类型“never”
+// let val_never:never = val;
+​
+//把其他类型分配给any
+otherType1 = 'hello';
+otherType1 = 110;
+otherType1 = true;
+otherType1 = null;
+otherType1 = undefined;
+​
+otherType1 = unknown;// 报错:“unknown”仅表示类型，但在此处却作为值使用
+otherType1 = never;// 报错:“never”仅表示类型，但在此处却作为值使用
+otherType1 = any;// 报错:“any”仅表示类型，但在此处却作为值使用
+otherType1 = void;// 报错:应为表达式
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><p>另外，any虽然可以代表任意类型，但是能不用就不要用，这是默认的代码规范问题.</p> <p>（4）unknown</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 把unknown类型分配给其他类型
+let myType: unknown;
+let myType1: any = myType;
+let myType2: unknown = myType;
+let myType3: string = myType;//报错
+let myType4: number = myType;//报错
+let myType5: boolean = myType;//报错
+let myType6: null = myType;//报错
+let myType7: undefined = myType;//报错
+​
+// 把其他类型分配给unknown类型
+myType = '';
+myType = 0;
+myType = true;
+myType = undefined;
+val = null;
+​
+myType = void;//报错
+myType = any;//报错
+myType = unknown;//报错
+myType = never;//报错
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><p>与any任意类型相比，因为unknown是未知类型，所以只能进行 ?, typeof, instanceof等有限操作.</p> <p>（5）never</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// never：是任何类型的子类型，也可以赋值给任何类型；然而，没有类型是never的子类型或可以赋值给never类型（除了never本身之外）
+// 返回never的函数必须存在无法达到的终点
+function throwError(message: string): never {
+    throw new Error(message);
+}
+// 返回never的函数必须存在无法达到的终点
+function infiniteLoop(): never {
+    while (true) {
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p><code>never</code>类型表示的是那些永不存在的值的类型。 例如， <code>never</code>类型是那些会抛出异常或根本就不会有返回值的函数表达式或箭头函数表达式的返回值类型； 变量也可能是 <code>never</code>类型，当它们被永不为真的类型保护所约束时。</p> <p>（6）interface（接口）</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 接口
+const hisObj={
+    name:'胡琴',
+    age:19,
+    sex:'boy'
+}
+hisObj.name='lucky'
+​
+// 具有一个和jisObj相同属性的对象
+let p1:Object={
+    name:'dog',
+    age:20
+}//这种方式不具有针对性
+​
+// （1）接口（具有针对性）
+interface Children{
+    name:string,
+    age:number,
+    sex:string
+}
+let pp1:Children={
+    name:'dog',
+    age:20,
+    sex:'female'
+}
+​
+// （2）函数接口
+interface Push{
+    (x:number,y:number):number
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><p>另外，</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>interface Myobj {
+    // 只读属性：约束属性不可在对象初始化外赋值
+    readonly cardId: number;
+    name: string;
+    sex: 'male' | 'female';
+    age: number;
+    // 可选属性：定义该属性可以不存在
+    hobby?: string;
+    // 任意属性：约束属性都必须是该属性的子类型
+    [key: string]: any;
+}
+​
+// 对象类型
+const obj: Myobj = {
+    cardId: 2020213028,
+    name: 'Lucky',
+    sex: 'female',
+    age: 19,
+    hobby: 'reading'
+}
+​
+// const o:Myobj={//报错：缺少name属性，hobby可缺省
+//  cardId:2020213026,
+//  sex:'female',
+//  age:18
+// }
+console.log(obj);
+// {
+//   cardId: 2020213028,
+//   name: 'Lucky',
+//   sex: 'female',
+//   age: 19,
+//   hobby: 'reading'
+// }
+console.log(obj.cardId);//2020213028
+console.log(obj.shortcoming = 'Math');//Math
+console.log(obj.cardId = 2020213026);//Cannot assign to 'cardId' because it is a read-only property.
+​
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br></div></div></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">12/18/2022, 5:18:06 PM</span></div></footer> <!----> <div class="comments-wrapper"><!----></div></main></div> <!----></div> <ul class="sub-sidebar sub-sidebar-wrapper" style="width:12rem;" data-v-b57cc07c data-v-7dd95ae2><li class="level-2" data-v-b57cc07c><a href="/personnal-blog/handbook/Typescript/ts-type.html#一、认识typescript" class="sidebar-link reco-side-一、认识typescript" data-v-b57cc07c>一、认识Typescript</a></li><li class="level-2" data-v-b57cc07c><a href="/personnal-blog/handbook/Typescript/ts-type.html#二、typescript优缺点" class="sidebar-link reco-side-二、typescript优缺点" data-v-b57cc07c>二、Typescript优缺点</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/Typescript/ts-type.html#_1、优点" class="sidebar-link reco-side-_1、优点" data-v-b57cc07c>1、优点：</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/Typescript/ts-type.html#_2、缺点" class="sidebar-link reco-side-_2、缺点" data-v-b57cc07c>2、缺点：</a></li><li class="level-2" data-v-b57cc07c><a href="/personnal-blog/handbook/Typescript/ts-type.html#三、运行typescript" class="sidebar-link reco-side-三、运行typescript" data-v-b57cc07c>三、运行Typescript</a></li><li class="level-2" data-v-b57cc07c><a href="/personnal-blog/handbook/Typescript/ts-type.html#四、基本类型" class="sidebar-link reco-side-四、基本类型" data-v-b57cc07c>四、基本类型</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/Typescript/ts-type.html#_1、非typescript新增类型" class="sidebar-link reco-side-_1、非typescript新增类型" data-v-b57cc07c>1、非Typescript新增类型</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/Typescript/ts-type.html#_2、typescript新增类型" class="sidebar-link reco-side-_2、typescript新增类型" data-v-b57cc07c>2、Typescript新增类型</a></li></ul></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:190px;display:none;" data-v-5775ee02>
+      我是bookbook,欢迎你的关注 
+    </div> <div class="operation" style="right:90px;bottom:40px;display:;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:;" data-v-5775ee02></i></div> <canvas id="banniang" width="150" height="219" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div><div class="reco-bgm-panel" data-v-b1d3339e><audio id="bgm" src="https://assets.smallsunnyfox.com/music/2.mp3" data-v-b1d3339e></audio> <div class="reco-float-box" style="bottom:200px;z-index:999999;display:none;" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><img src="https://p1.music.126.net/Gxv6d9W4Yd9q9WNHPpi8rw==/1379887104073348.jpg" data-v-b1d3339e></div> <div class="reco-bgm-box" style="left:10px;bottom:10px;z-index:999999;" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><div class="reco-bgm-cover" style="background-image:url(https://p1.music.126.net/Gxv6d9W4Yd9q9WNHPpi8rw==/1379887104073348.jpg);" data-v-b1d3339e><div class="mini-operation" style="display:none;" data-v-b1d3339e><i class="reco-bgm reco-bgm-pause" style="display:none;" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-play" style="display:none;" data-v-b1d3339e></i></div> <div class="falut-message" style="display:none;" data-v-b1d3339e>
+          播放失败
+        </div></div> <div class="reco-bgm-info" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><div class="info-box" data-v-b1d3339e><i class="reco-bgm reco-bgm-music music" data-v-b1d3339e></i>Faster Than Light</div> <div class="info-box" data-v-b1d3339e><i class="reco-bgm reco-bgm-artist" data-v-b1d3339e></i>Andreas Waldetoft / Mia Stegmar</div> <div class="reco-bgm-progress" data-v-b1d3339e><div class="progress-bar" data-v-b1d3339e><div class="bar" data-v-b1d3339e></div></div></div> <div class="reco-bgm-operation" data-v-b1d3339e><i class="reco-bgm reco-bgm-last last" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-pause pause" style="display:none;" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-play play" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-next next" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-volume1 volume" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-mute mute" style="display:none;" data-v-b1d3339e></i> <div class="volume-bar" data-v-b1d3339e><div class="bar" data-v-b1d3339e></div></div></div></div> <div class="reco-bgm-left-box" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><i class="reco-bgm reco-bgm-left" data-v-b1d3339e></i></div></div></div><div></div><canvas id="vuepress-canvas-cursor"></canvas><!----><div class="RibbonAnimation"></div></div></div>
+    <script src="/personnal-blog/assets/js/app.eb925b14.js" defer></script><script src="/personnal-blog/assets/js/3.82b7d1e8.js" defer></script><script src="/personnal-blog/assets/js/1.581215d2.js" defer></script><script src="/personnal-blog/assets/js/38.5fd1dc3c.js" defer></script>
+  </body>
+</html>

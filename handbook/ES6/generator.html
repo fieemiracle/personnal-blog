@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>这个冬天，一起认识Generator函数 | fieemiracle的博客</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/personnal-blog/favicon.ico">
+    <meta name="description" content="纸上得来终觉浅，绝知此事要躬行~">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/personnal-blog/assets/css/0.styles.b7fcd70a.css" as="style"><link rel="preload" href="/personnal-blog/assets/js/app.eb925b14.js" as="script"><link rel="preload" href="/personnal-blog/assets/js/3.82b7d1e8.js" as="script"><link rel="preload" href="/personnal-blog/assets/js/1.581215d2.js" as="script"><link rel="preload" href="/personnal-blog/assets/js/17.0e9f6058.js" as="script"><link rel="prefetch" href="/personnal-blog/assets/js/10.c1074edc.js"><link rel="prefetch" href="/personnal-blog/assets/js/11.580d9231.js"><link rel="prefetch" href="/personnal-blog/assets/js/12.bf4f7a5b.js"><link rel="prefetch" href="/personnal-blog/assets/js/13.ae9a8761.js"><link rel="prefetch" href="/personnal-blog/assets/js/14.52ae5247.js"><link rel="prefetch" href="/personnal-blog/assets/js/15.03a26f1e.js"><link rel="prefetch" href="/personnal-blog/assets/js/16.5b6692de.js"><link rel="prefetch" href="/personnal-blog/assets/js/18.5877e58c.js"><link rel="prefetch" href="/personnal-blog/assets/js/19.736ba708.js"><link rel="prefetch" href="/personnal-blog/assets/js/20.87379000.js"><link rel="prefetch" href="/personnal-blog/assets/js/21.090f5a62.js"><link rel="prefetch" href="/personnal-blog/assets/js/22.25f6087c.js"><link rel="prefetch" href="/personnal-blog/assets/js/23.6f79cf9d.js"><link rel="prefetch" href="/personnal-blog/assets/js/24.8f53790a.js"><link rel="prefetch" href="/personnal-blog/assets/js/25.25acc6cb.js"><link rel="prefetch" href="/personnal-blog/assets/js/26.03692726.js"><link rel="prefetch" href="/personnal-blog/assets/js/27.18c3b62b.js"><link rel="prefetch" href="/personnal-blog/assets/js/28.12adaacd.js"><link rel="prefetch" href="/personnal-blog/assets/js/29.b4c0da75.js"><link rel="prefetch" href="/personnal-blog/assets/js/30.88ab72ba.js"><link rel="prefetch" href="/personnal-blog/assets/js/31.60c833fa.js"><link rel="prefetch" href="/personnal-blog/assets/js/32.103ab689.js"><link rel="prefetch" href="/personnal-blog/assets/js/33.e1013157.js"><link rel="prefetch" href="/personnal-blog/assets/js/34.c9c2ba52.js"><link rel="prefetch" href="/personnal-blog/assets/js/35.e89b1e9d.js"><link rel="prefetch" href="/personnal-blog/assets/js/36.da7f727c.js"><link rel="prefetch" href="/personnal-blog/assets/js/37.d340480c.js"><link rel="prefetch" href="/personnal-blog/assets/js/38.5fd1dc3c.js"><link rel="prefetch" href="/personnal-blog/assets/js/39.e70cb200.js"><link rel="prefetch" href="/personnal-blog/assets/js/4.df85215d.js"><link rel="prefetch" href="/personnal-blog/assets/js/40.2482b706.js"><link rel="prefetch" href="/personnal-blog/assets/js/41.a9cb5d8d.js"><link rel="prefetch" href="/personnal-blog/assets/js/42.09eab8e0.js"><link rel="prefetch" href="/personnal-blog/assets/js/43.d1ef214c.js"><link rel="prefetch" href="/personnal-blog/assets/js/44.ed96d3e1.js"><link rel="prefetch" href="/personnal-blog/assets/js/45.6ae3df0e.js"><link rel="prefetch" href="/personnal-blog/assets/js/46.640215d1.js"><link rel="prefetch" href="/personnal-blog/assets/js/47.d6292abe.js"><link rel="prefetch" href="/personnal-blog/assets/js/48.8eebcc95.js"><link rel="prefetch" href="/personnal-blog/assets/js/49.a50e77ae.js"><link rel="prefetch" href="/personnal-blog/assets/js/5.adbb23cc.js"><link rel="prefetch" href="/personnal-blog/assets/js/6.43f51bd5.js"><link rel="prefetch" href="/personnal-blog/assets/js/7.38f27899.js"><link rel="prefetch" href="/personnal-blog/assets/js/8.975d02c6.js"><link rel="prefetch" href="/personnal-blog/assets/js/9.8e043322.js">
+    <link rel="stylesheet" href="/personnal-blog/assets/css/0.styles.b7fcd70a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-7dd95ae2><div data-v-7dd95ae2><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>fieemiracle的博客</h3> <p class="description" data-v-59e6cb88>纸上得来终觉浅，绝知此事要躬行~</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>fieemiracle</span>
+          
+        <!---->
+        2022
+      </a></span></div></div> <div class="hide" data-v-7dd95ae2><header class="navbar" data-v-7dd95ae2><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/personnal-blog/" class="home-link router-link-active"><!----> <span class="site-name">fieemiracle的博客</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/personnal-blog/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      目录
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/字节青训营笔记/" class="nav-link"><i class="undefined"></i>
+  字节青训营笔记
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/ES6/" class="nav-link"><i class="undefined"></i>
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Javascript/" class="nav-link"><i class="undefined"></i>
+  Javascript
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/NodeJS/" class="nav-link"><i class="undefined"></i>
+  NodeJS
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Typescript/" class="nav-link"><i class="undefined"></i>
+  Typescript
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Vue Series/" class="nav-link"><i class="undefined"></i>
+  Vue Series
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/手写题/" class="nav-link"><i class="undefined"></i>
+  手写题
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/面试题/" class="nav-link"><i class="undefined"></i>
+  面试题
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/浏览器/" class="nav-link"><i class="undefined"></i>
+  浏览器
+</a></li></ul></div></div><div class="nav-item"><a href="/personnal-blog/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/personnal-blog/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      简历
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/personnal-blog/views/Resume/resume.html" class="nav-link"><i class="undefined"></i>
+  我的简历
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/fieemiracle" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://leetcode.cn/u/fieemiracle/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  Leetcode
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://juejin.cn/user/3316551988553709/posts" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-juejin"></i>
+  稀土掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/fieemiracle" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://mp.csdn.net/mp_blog/manage/article?spm=1010.2135.3001.5448" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-7dd95ae2></div> <aside class="sidebar" data-v-7dd95ae2><div class="personal-info-wrapper" data-v-1fad0c41 data-v-7dd95ae2><img src="/personnal-blog/avatar.jpg" alt="author-avatar" class="personal-img" data-v-1fad0c41> <h3 class="name" data-v-1fad0c41>
+    fieemiracle
+  </h3> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>39</h3> <h6 data-v-1fad0c41>Articles</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>34</h3> <h6 data-v-1fad0c41>Tags</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><a href="/personnal-blog/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      目录
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/字节青训营笔记/" class="nav-link"><i class="undefined"></i>
+  字节青训营笔记
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/ES6/" class="nav-link"><i class="undefined"></i>
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Javascript/" class="nav-link"><i class="undefined"></i>
+  Javascript
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/NodeJS/" class="nav-link"><i class="undefined"></i>
+  NodeJS
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Typescript/" class="nav-link"><i class="undefined"></i>
+  Typescript
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Vue Series/" class="nav-link"><i class="undefined"></i>
+  Vue Series
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/手写题/" class="nav-link"><i class="undefined"></i>
+  手写题
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/面试题/" class="nav-link"><i class="undefined"></i>
+  面试题
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/浏览器/" class="nav-link"><i class="undefined"></i>
+  浏览器
+</a></li></ul></div></div><div class="nav-item"><a href="/personnal-blog/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/personnal-blog/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      简历
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/personnal-blog/views/Resume/resume.html" class="nav-link"><i class="undefined"></i>
+  我的简历
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/fieemiracle" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://leetcode.cn/u/fieemiracle/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  Leetcode
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://juejin.cn/user/3316551988553709/posts" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-juejin"></i>
+  稀土掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/fieemiracle" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://mp.csdn.net/mp_blog/manage/article?spm=1010.2135.3001.5448" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>这个冬天，一起认识Generator函数</h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>fieemiracle</span>
+          
+        <!---->
+        2022
+      </a></span></div></div> <div data-v-7dd95ae2><div data-v-7dd95ae2><main class="page"><section style="display:;"><div class="page-title"><h1 class="title">这个冬天，一起认识Generator函数</h1> <div data-v-8a445198><i class="iconfont reco-account" data-v-8a445198><span data-v-8a445198>fieemiracle</span></i> <i class="iconfont reco-date" data-v-8a445198><span data-v-8a445198>12/1/2022</span></i> <i class="iconfont reco-eye" data-v-8a445198><span id="/personnal-blog/handbook/ES6/generator.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-8a445198><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="tags iconfont reco-tag" data-v-8a445198><span class="tag-item" data-v-8a445198>Generator</span></i></div></div> <div class="theme-reco-content content__default"><hr> <h2 id="theme-fancyhighlight-a11y-dark"><a href="#theme-fancyhighlight-a11y-dark" class="header-anchor">#</a> theme: fancy
+highlight: a11y-dark</h2> <p><em><strong>本文正在参加<a href="https://juejin.cn/post/7162096952883019783" title="https://juejin.cn/post/7162096952883019783" target="_blank" rel="noopener noreferrer">「金石计划 . 瓜分6万现金大奖」<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></strong></em></p> <p>我们曾几何时在 <a href="https://juejin.cn/post/7122478595787718663#heading-10" target="_blank" rel="noopener noreferrer">  消灭异步回调，还得是async-await  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>一文中提及到Generator函数，来看看为什么说Async-Await也是Generator函数的语法糖吧。</p> <h2 id="一、什么是generator函数"><a href="#一、什么是generator函数" class="header-anchor">#</a> 一、什么是Generator函数？</h2> <p>Generator 函数也是 ES6 提供的一种解决异步编程方案，虽然Generator 函数是一个普通的函数，但是它的语法行为与传统函数完全不同！</p> <h3 id="_1、基本语法"><a href="#_1、基本语法" class="header-anchor">#</a> 1、基本语法</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 基本语法
+function* generator() {
+    yield 'hello'
+    yield 'world'
+    return &quot;thanks&quot;
+}
+const gen = generator()
+console.log(gen);
+console.log(gen.next());  //next1
+console.log(gen.next()); //next2
+console.log(gen.next()); //next3
+console.log(gen.next()); //next4
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>你以为这样打印看得到结果就是完了？No！接下来，一步一步分析：</p> <h4 id="_1-状态"><a href="#_1-状态" class="header-anchor">#</a> （1）状态</h4> <div class="language- line-numbers-mode"><pre class="language-text"><code>//当只是打印Generator实例时
+console.log(gen); //Object [Generator] {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>在浏览器显示会更加详细：</p> <p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c496ac9899024bdc845e9ab33a0fea4e~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p> <p>结果显示，<code>[[GeneratorState]]:suspended</code>，即Generator的初始状态是暂停的。什么情况下会改变转改呢？当执行next()时，会发生什么？</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>console.log(gen.next());  //1
+console.log(gen.next()); //2
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>当继续<code>只执行next1</code>或者<code>执行next1和next2</code>时，Generator实例的状态依旧是<code>[[GeneratorState]]: &quot;suspended&quot;</code>，并且，打印的结果分别是：<code>{ value: 'hello', done: false }</code>，<code>{ value: 'world', done: false }</code>，字段<code>done</code>的值都是<code>false</code>，如图所示：</p> <p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5ae01b56735f4d97aacb27e0f688fd4c~tplv-k3u1fbpfcp-watermark.image?" alt="image.png">
+紧接着，继续执行<code>next3</code>，结果就不一样了：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>console.log(gen.next()); //next3
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/22f7b738368d4990904473d05d92a9b4~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p> <p>可以看到，Generator实例的状态变更了：<code>[[GeneratorState]]: &quot;closed&quot;</code>，代表<code>generator</code>函数执行完毕了，另外，<code>{ value: 'thanks', done: true }</code>，字段<code>done</code>的值都是<code>true</code>。执行完毕了还可以继续<code>next</code>嘛？看看就知道，继续执行<code>next4</code>：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>console.log(gen.next()); //next4
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6c31418825d3432ea3c6d39362e86e46~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p> <p>还是可以，Generator实例的状态依旧是关闭的，只不过，注意观察<code>next4</code>后的结果的<code>{ value: undefined, done: true }</code>。并且，在此之后，无论执行多少个<code>next</code>，结果都是<code>{ value: undefined, done: true }</code>。</p> <h4 id="_2-执行"><a href="#_2-执行" class="header-anchor">#</a> （2）执行</h4> <p>Generator 函数<code>generator</code>函数的函数体内部有两个<code>yield</code>表达式<code>yield 'hello'和yield 'world'</code>和一个<code>return</code>语句，表示该函数有三个状态：<code>hello</code>、<code>world</code>和<code>return(结束执行)</code></p> <p>第一次调用，Generator 函数<code>generator</code>开始执行，遇到第一个<code>yield</code>则暂停执行，<code>next</code>返回一个对象：<code>{ value: 'hello', done: false }</code>，此时遍历还没有结束。</p> <p>第二次调用，Generator 函数<code>generator</code>从上一次<code>yield</code>暂停执行处继续执行，直到遇到下一个<code>yield</code>则暂停执行，<code>next</code>返回一个对象：<code>{ value: 'world', done: false }</code>，此时遍历还没有结束。</p> <p>第三次调用：Generator 函数<code>generator</code>从上一次<code>yield</code>暂停执行处继续执行，直到遇到<code>return语句</code>（如果没有return语句，就执行到函数结束）则执行完毕，<code>next</code>返回一个对象：<code>{ value: 'thanks', done: true }</code>，此时遍历已经结束。</p> <p>第四次调用：Generator 函数<code>generator</code>函数已经执行完毕，<code>next</code>返回一个对象：<code>{ value: 'undefined', done: true }</code>，无论接下来执行N次<code>next</code>，结果一直会是这个，不会再改变。</p> <h4 id="_3-特征"><a href="#_3-特征" class="header-anchor">#</a> （3）特征</h4> <p>从这个简单的例子示范，可以看出：</p> <p>第一：Genenrator函数定义时，<code>function</code>关键字与函数名之间有一个<code>*</code>，一般的写法是紧挨着<code>function</code>关键字；</p> <p>第二：Genenrator函数的函数体内部可以通过<code>yield表达式</code>标记暂停执行（定义不同的内部状态），即遇到<code>yield</code>表达式，就会暂停执行后面的所有操作，而紧跟在<code>yield</code>后面的值作为返回对象中<code>value</code>属性的值，其实例对象通过<code>next</code>恢复执行，只有调用<code>next</code>方法才会遍历下一个内部状态，已经调用<code>next</code>方法，那么下一个<code>next</code>调用时，会在上次暂停的地方继续执行，而不是从头开始执行。；</p> <p>第三：Genenrator函数执行时，执行结果会返回一个<code>Object [Generator] {}</code>，即遍历器对象。</p> <h3 id="_2、yield表达式-next方法"><a href="#_2、yield表达式-next方法" class="header-anchor">#</a> 2、yield表达式&amp;&amp;next方法</h3> <p>相信你已经明白了<code>yield</code>和<code>next</code>的执行逻辑，但是也还有一些细节需要注意：</p> <h4 id="_1-函数内部没有yield和return语句"><a href="#_1-函数内部没有yield和return语句" class="header-anchor">#</a> （1）函数内部没有<code>yield</code>和<code>return语句</code></h4> <p>Genenrator函数内部没有<code>yield</code>和<code>return语句</code>时，需要使用<code>next</code>方法开启执行，不然函数不会执行，那么函数会直接执行函数内部的代码，该打印就打印，函数内部执行完毕后，<code>next</code>依然会返回一个对象：<code>{ value: undefined, done: true }</code>，此时，函数的状态也由<code>[[GeneratorState]]:suspended</code>变成了<code>[[GeneratorState]]:closed</code>。</p> <p>综上所述，Generator 函数可以不用<code>yield</code>表达式，这时就变成了一个单纯的暂缓执行函数。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 没有yield表达式
+function* foo() {
+    console.log('hello');
+    console.log('world');
+}
+const f = foo()
+console.log(f.next());
+// hello
+// world
+// { value: undefined, done: true }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h4 id="_2-函数内部没有return语句时"><a href="#_2-函数内部没有return语句时" class="header-anchor">#</a> （2）函数内部没有<code>return语句</code>时</h4> <p>Genenrator函数内部没有<code>return语句时</code>，则返回的对象的<code>value</code>属性的值为<code>undefined</code></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function* generator() {
+    yield 'hello'
+}
+const gen = generator()
+console.log(gen.next()); //{ value: 'hello', done: false }
+console.log(gen.next()); //{ value: undefined, done: true }
+​
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h4 id="_3-yield表达式与return语句相比"><a href="#_3-yield表达式与return语句相比" class="header-anchor">#</a> （3）<code>yield</code>表达式与<code>return</code>语句相比</h4> <p><code>yield</code>表达式具备位置记忆的功能，Genenrator函数内部可以执行多个<code>yield</code>表达式，并返回一系列值。其实<code>yield</code>表达式与<code>return</code>语句很相似，都可以返回紧接在后面的值，但是最大的区别就是可以执行多次<code>yield</code>表达式，并且每次执行都会暂停执行，需要<code>next</code>方法的调用来回复执行，同时会从上次暂停的地方继续执行；而<code>return</code>只能执行一次，并且不具备位置记忆功能。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function common() {
+    console.log('开始执行');
+}
+const foo = common() //开始执行
+​
+function* generator() {
+    console.log('开始执行');
+}
+const gen = generator()
+gen.next() //开始执行
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h4 id="_4-yield表达式的使用位置"><a href="#_4-yield表达式的使用位置" class="header-anchor">#</a> （4）<code>yield</code>表达式的使用位置</h4> <p><code>yield</code>表达式只能在Genenrator函数内部使用，在其他地方使用会报错。这一点与<code>await</code>必须与<code>async</code>配对使用有异曲同工之处。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// yield的使用位置
+function testYield1() {
+    yield 'hello'
+}
+const test = testYield1() 
+​
+//SyntaxError: Unexpected string   报错
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>另外，如果有需要将<code>yield</code>表达式用在另外一个表达式之中，则必须放在圆括号<code>()</code>里面，否则会报错。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function* testYield2() {
+    //错误写法
+    // console.log('Hello ' + yield); 
+    // console.log('Hello ' + yield 'World'); 
+    //SyntaxError: Unexpected identifier
+    
+    //正确写法
+    console.log('Hello ' + (yield));
+    console.log('Hello ' + (yield 'World'));
+}
+const gen = testYield2()
+console.log(gen.next());
+console.log(gen.next());
+console.log(gen.next());
+​
+// { value: undefined, done: false }
+// Hello undefined
+// { value: 'World', done: false }
+// Hello undefined
+// { value: undefined, done: true }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><h3 id="_3、中间件next"><a href="#_3、中间件next" class="header-anchor">#</a> 3、中间件next()</h3> <p>在上面的例子中，都只是纯纯地调用<code>next()</code>方法，没有给它传递参数，是不能接收参数嘛？当然不是。<code>next()</code>也可以接收参数，因为<code>yield</code>本身没有返回值。<code>next</code>方法可以携带一个参数，这个参数就会被当做上一个<code>yield</code>表达式的返回值。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function* generator() {
+    for (let i = 1; i &lt; 3; i++) {
+        let yieldVal = yield i;
+        console.log('yieldVal=', yieldVal);
+        if (yieldVal == 2) {
+            i = 0
+        }
+    }
+}
+let gen = generator()
+console.log('nextObj=', gen.next());
+console.log('nextObj=', gen.next());
+console.log('nextObj=', gen.next(2));
+console.log('nextObj=', gen.next());
+console.log('nextObj=', gen.next());
+​
+//打印结果：
+// nextObj= { value: 1, done: false }
+// yieldVal= undefined
+// nextObj= { value: 2, done: false }
+// yieldVal= 2
+// nextObj= { value: 1, done: false }
+// yieldVal= undefined
+// nextObj= { value: 2, done: false }
+// yieldVal= undefined
+// nextObj= { value: undefined, done: true }
+​
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><p>观察<code>yieldVal</code>每次打印的值可以发现，<code>yieldVal=undefined</code>总是等于<code>undefined</code>，即<code>yield</code>总是返回<code>`当给</code>next<code>传递一个参数2的时候，</code>yieldVal=2<code>，所以符合</code>if<code>条件，</code>i=0<code>，那么下一次循环就会从</code>0<code>开始递增。所以说，</code>next<code>方法的参数会作为外部的值注入到函数体内部，并且被当做上一个</code>yield`表达式的返回值。</p> <p>简单概括一下：<code>next</code>方法传入的参数会作为上一个<code>yield</code>表达式的返回值，然而，我们在第一次调用<code>next</code>并且传入参数时，是无效的，V8引擎会自动忽略第一使用<code>next</code>的参数，只会从第二次调用<code>next</code>时开始，传入的参数才是有效的。难道第一次调用<code>next</code>没有意义了？当然不是，第一次调用<code>next</code>方法是用来启动遍历器对象的，不需要带参数。</p> <p>这时候就有一个疑问了，我就是要在第一次调用的时候给<code>next</code>传入参数，并且生效，怎么办？自然还是有解决办法的：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function outerFun(generatorFun) {//参数是一个Generator函数
+    return function() {//return出去一个函数
+        let gen = generatorFun()
+        gen.next()
+        return gen
+    }
+}
+​
+const outer = outerFun(function*() {
+    console.log(`你第一次传入的参数是: ${yield}`)
+    return 'World'
+});
+​
+outer().next('Hello!')
+//你第一次传入的参数是: Hello~
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>从上述例子中可以看出，Generator函数作为<code>outerFun</code>（普通函数）的形参，然后<code>return</code>出去一个执行函数（匿名函数），调用<code>outerFun</code>，并传入实参，因为闭包的存在，最后执行匿名函数。可见，Generator函数被函数<code>outerFun</code>包裹了一层，让第一次调用<code>next</code>方法时，传入的参数生效。</p> <h3 id="_4、作为对象的属性"><a href="#_4、作为对象的属性" class="header-anchor">#</a> 4、作为对象的属性</h3> <p>这里肯定让人很奇怪，好歹Generator函数也是函数，函数还可以作为对象的键？是什么限制了我的无知。。。。如果一个对象的属性的Generator函数，该怎么写呢？</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>let obj = {
+    * generator() {
+        console.log('Genrator函数');
+        return 'hello'
+    }
+};
+console.log(obj.generator);
+//[GeneratorFunction: generator]
+​
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>通过展示，发现定义<code>generator</code>时，前面多了个<code>*</code>，表示该属性是一个Generator函数，这种写法不便于记忆和理解，也可以写成下面的形式：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>let obj = {
+    generator: function*() {
+        console.log('Genrator函数');
+        return 'hello'
+    }
+}
+console.log(obj.generator); //[GeneratorFunction: generator]
+​
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>这种形式就是我们熟悉的写法了，函数名字作为对象的键，而函数本身作为对象的值。</p> <h3 id="_5、this指向"><a href="#_5、this指向" class="header-anchor">#</a> 5、this指向</h3> <p><code>Generator函数的this</code>关键字，首先箭头函数是没有<code>this</code>的，那Generator函数里面有<code>this</code>吗？</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function Person() {
+    this.name = 'Person'
+}
+​
+function* Student() {
+    this.name = 'Student'
+}
+​
+let person = new Person()
+console.log(person); //Person { name: 'Person' }
+console.log(person.name); //Person
+let student = Student()
+console.log(student); //Object [Generator] {}
+student.next()
+console.log(student.name); //undefined
+​
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p>从上述代码可以看出，Generator函数返回的总是遍历器对象，就算在Generator函数内部的<code>this</code>上挂上一个属性<code>name</code>，但是返回的遍历器对象就是拿不到这个属性。难道是Generator函数没有<code>this</code>?有没有，打印以下就知道了：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function* gen() {
+    console.log(this);
+}
+let g = gen()
+g.next()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bfff9f90470441dc961f917e751e0c94~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p> <p>有打印结果，说明是存在你<code>this</code>的，只不过，Generator函数返回的遍历器对象无法继承<code>this</code>。那怎么样才能访问<code>this</code>呢？遍历器对象不能访问，那正常的对象是不是就可以了呢？</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function* gen() {
+    this.name = 'cat'
+}
+let obj = {}
+let g = gen.call(obj)
+​
+console.log(obj instanceof gen); //false
+console.log(g instanceof gen); //true
+​
+console.log(obj); //{name:'cat'}
+console.log(g); //Object [Generator] {}
+​
+g.next()
+console.log(obj.name); //cat
+console.log(g.name); //undefined
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>上述例子中，将Generator函数<code>gen</code>的<code>this</code>绑定到一个空对象上，即Generator函数<code>gen</code>的<code>this</code>指向这个空对象。这样的话，Generator函数<code>gen</code>执行后，就能访问Generator函数<code>gen</code>的<code>this</code>了。不过Generator函数的遍历器对象依旧不能够访问<code>this</code>。那就是要遍历器对象<code>g</code>访问<code>this</code>上的属性，怎么办？有一个办法是将Generator函数的原型替换这个空对象，Generator函数中<code>[[Prototype]]: Generator</code>，Generator函数的prototype是除掉yield以外的语句：</p> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a53ca68226eb42bd886874965b49db24~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p> <h3 id="_6、与构造函数相比"><a href="#_6、与构造函数相比" class="header-anchor">#</a> 6、与构造函数相比</h3> <p>与构造函数相比，Generator函数无法<code>new</code>。举个例子：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function Person() {}
+Person.prototype.say = function() {
+    console.log('good morning!');
+}
+let person = new Person()
+console.log(person instanceof Person);
+person.say()
+​
+​
+function* Student() {}
+Student.prototype.say = function() {
+    console.log('good afternoon!');
+}
+​
+let student = Student()
+console.log(student instanceof Student);
+student.say()
+​
+//测试能不能使用new操作符
+let test = new Student()
+console.log(test instanceof Student); 
+//TypeError: Student is not a constructor
+​
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><h3 id="_7、与async-await相比"><a href="#_7、与async-await相比" class="header-anchor">#</a> 7、与Async-Await相比</h3> <p>为什么说Async-Await是Generator函数的语法糖？那就举个例子，首先定义一个工具函数<code>foo</code>，接收一个形参<code>num</code>：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function foo(num) {
+    return new Promise((resolve, reject) =&gt; {
+        setTimeout(() =&gt; {
+            resolve(num * 2)
+        }, 1000)
+    })
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>接下来同时分别使用Async-Await和Generator函数来实现：依次调用传递的参数，首先使用Generator函数实现展示：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function* gen() {
+    foo(1)
+    yield
+    foo(2)
+    yield
+    foo(3)
+    yield
+}
+let g=gen()
+g.next()//2
+g.next()//4
+g.next()//6
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>然后看看Async-Await如何实现：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>async function AsyncAwait() {
+    await foo(1)
+    await foo(2)
+    await foo(3)
+}
+AsyncAwait()
+//2 4 6
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>对比完发下，Async-Await简直不要太~优雅了。就好比声明Generator函数的<code>*</code>换成了<code>async</code>，<code>yield</code>表达式换成了<code>await</code>，但是Async-Await就让人更舒适。</p></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">12/18/2022, 7:24:59 PM</span></div></footer> <!----> <div class="comments-wrapper"><!----></div></main></div> <!----></div> <ul class="sub-sidebar sub-sidebar-wrapper" style="width:12rem;" data-v-b57cc07c data-v-7dd95ae2><li class="level-2" data-v-b57cc07c><a href="/personnal-blog/handbook/ES6/generator.html#theme-fancyhighlight-a11y-dark" class="sidebar-link reco-side-theme-fancyhighlight-a11y-dark" data-v-b57cc07c>theme: fancy
+highlight: a11y-dark</a></li><li class="level-2" data-v-b57cc07c><a href="/personnal-blog/handbook/ES6/generator.html#一、什么是generator函数" class="sidebar-link reco-side-一、什么是generator函数" data-v-b57cc07c>一、什么是Generator函数？</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/ES6/generator.html#_1、基本语法" class="sidebar-link reco-side-_1、基本语法" data-v-b57cc07c>1、基本语法</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/ES6/generator.html#_2、yield表达式-next方法" class="sidebar-link reco-side-_2、yield表达式-next方法" data-v-b57cc07c>2、yield表达式&amp;&amp;next方法</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/ES6/generator.html#_3、中间件next" class="sidebar-link reco-side-_3、中间件next" data-v-b57cc07c>3、中间件next()</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/ES6/generator.html#_4、作为对象的属性" class="sidebar-link reco-side-_4、作为对象的属性" data-v-b57cc07c>4、作为对象的属性</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/ES6/generator.html#_5、this指向" class="sidebar-link reco-side-_5、this指向" data-v-b57cc07c>5、this指向</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/ES6/generator.html#_6、与构造函数相比" class="sidebar-link reco-side-_6、与构造函数相比" data-v-b57cc07c>6、与构造函数相比</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/ES6/generator.html#_7、与async-await相比" class="sidebar-link reco-side-_7、与async-await相比" data-v-b57cc07c>7、与Async-Await相比</a></li></ul></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:190px;display:none;" data-v-5775ee02>
+      我是bookbook,欢迎你的关注 
+    </div> <div class="operation" style="right:90px;bottom:40px;display:;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:;" data-v-5775ee02></i></div> <canvas id="banniang" width="150" height="219" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div><div class="reco-bgm-panel" data-v-b1d3339e><audio id="bgm" src="https://assets.smallsunnyfox.com/music/2.mp3" data-v-b1d3339e></audio> <div class="reco-float-box" style="bottom:200px;z-index:999999;display:none;" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><img src="https://p1.music.126.net/Gxv6d9W4Yd9q9WNHPpi8rw==/1379887104073348.jpg" data-v-b1d3339e></div> <div class="reco-bgm-box" style="left:10px;bottom:10px;z-index:999999;" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><div class="reco-bgm-cover" style="background-image:url(https://p1.music.126.net/Gxv6d9W4Yd9q9WNHPpi8rw==/1379887104073348.jpg);" data-v-b1d3339e><div class="mini-operation" style="display:none;" data-v-b1d3339e><i class="reco-bgm reco-bgm-pause" style="display:none;" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-play" style="display:none;" data-v-b1d3339e></i></div> <div class="falut-message" style="display:none;" data-v-b1d3339e>
+          播放失败
+        </div></div> <div class="reco-bgm-info" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><div class="info-box" data-v-b1d3339e><i class="reco-bgm reco-bgm-music music" data-v-b1d3339e></i>Faster Than Light</div> <div class="info-box" data-v-b1d3339e><i class="reco-bgm reco-bgm-artist" data-v-b1d3339e></i>Andreas Waldetoft / Mia Stegmar</div> <div class="reco-bgm-progress" data-v-b1d3339e><div class="progress-bar" data-v-b1d3339e><div class="bar" data-v-b1d3339e></div></div></div> <div class="reco-bgm-operation" data-v-b1d3339e><i class="reco-bgm reco-bgm-last last" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-pause pause" style="display:none;" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-play play" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-next next" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-volume1 volume" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-mute mute" style="display:none;" data-v-b1d3339e></i> <div class="volume-bar" data-v-b1d3339e><div class="bar" data-v-b1d3339e></div></div></div></div> <div class="reco-bgm-left-box" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><i class="reco-bgm reco-bgm-left" data-v-b1d3339e></i></div></div></div><div></div><canvas id="vuepress-canvas-cursor"></canvas><!----><div class="RibbonAnimation"></div></div></div>
+    <script src="/personnal-blog/assets/js/app.eb925b14.js" defer></script><script src="/personnal-blog/assets/js/3.82b7d1e8.js" defer></script><script src="/personnal-blog/assets/js/1.581215d2.js" defer></script><script src="/personnal-blog/assets/js/17.0e9f6058.js" defer></script>
+  </body>
+</html>

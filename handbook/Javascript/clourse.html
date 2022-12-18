@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>javascript--闭包知多少 | fieemiracle的博客</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/personnal-blog/favicon.ico">
+    <meta name="description" content="纸上得来终觉浅，绝知此事要躬行~">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/personnal-blog/assets/css/0.styles.b7fcd70a.css" as="style"><link rel="preload" href="/personnal-blog/assets/js/app.eb925b14.js" as="script"><link rel="preload" href="/personnal-blog/assets/js/3.82b7d1e8.js" as="script"><link rel="preload" href="/personnal-blog/assets/js/1.581215d2.js" as="script"><link rel="preload" href="/personnal-blog/assets/js/22.25f6087c.js" as="script"><link rel="prefetch" href="/personnal-blog/assets/js/10.c1074edc.js"><link rel="prefetch" href="/personnal-blog/assets/js/11.580d9231.js"><link rel="prefetch" href="/personnal-blog/assets/js/12.bf4f7a5b.js"><link rel="prefetch" href="/personnal-blog/assets/js/13.ae9a8761.js"><link rel="prefetch" href="/personnal-blog/assets/js/14.52ae5247.js"><link rel="prefetch" href="/personnal-blog/assets/js/15.03a26f1e.js"><link rel="prefetch" href="/personnal-blog/assets/js/16.5b6692de.js"><link rel="prefetch" href="/personnal-blog/assets/js/17.0e9f6058.js"><link rel="prefetch" href="/personnal-blog/assets/js/18.5877e58c.js"><link rel="prefetch" href="/personnal-blog/assets/js/19.736ba708.js"><link rel="prefetch" href="/personnal-blog/assets/js/20.87379000.js"><link rel="prefetch" href="/personnal-blog/assets/js/21.090f5a62.js"><link rel="prefetch" href="/personnal-blog/assets/js/23.6f79cf9d.js"><link rel="prefetch" href="/personnal-blog/assets/js/24.8f53790a.js"><link rel="prefetch" href="/personnal-blog/assets/js/25.25acc6cb.js"><link rel="prefetch" href="/personnal-blog/assets/js/26.03692726.js"><link rel="prefetch" href="/personnal-blog/assets/js/27.18c3b62b.js"><link rel="prefetch" href="/personnal-blog/assets/js/28.12adaacd.js"><link rel="prefetch" href="/personnal-blog/assets/js/29.b4c0da75.js"><link rel="prefetch" href="/personnal-blog/assets/js/30.88ab72ba.js"><link rel="prefetch" href="/personnal-blog/assets/js/31.60c833fa.js"><link rel="prefetch" href="/personnal-blog/assets/js/32.103ab689.js"><link rel="prefetch" href="/personnal-blog/assets/js/33.e1013157.js"><link rel="prefetch" href="/personnal-blog/assets/js/34.c9c2ba52.js"><link rel="prefetch" href="/personnal-blog/assets/js/35.e89b1e9d.js"><link rel="prefetch" href="/personnal-blog/assets/js/36.da7f727c.js"><link rel="prefetch" href="/personnal-blog/assets/js/37.d340480c.js"><link rel="prefetch" href="/personnal-blog/assets/js/38.5fd1dc3c.js"><link rel="prefetch" href="/personnal-blog/assets/js/39.e70cb200.js"><link rel="prefetch" href="/personnal-blog/assets/js/4.df85215d.js"><link rel="prefetch" href="/personnal-blog/assets/js/40.2482b706.js"><link rel="prefetch" href="/personnal-blog/assets/js/41.a9cb5d8d.js"><link rel="prefetch" href="/personnal-blog/assets/js/42.09eab8e0.js"><link rel="prefetch" href="/personnal-blog/assets/js/43.d1ef214c.js"><link rel="prefetch" href="/personnal-blog/assets/js/44.ed96d3e1.js"><link rel="prefetch" href="/personnal-blog/assets/js/45.6ae3df0e.js"><link rel="prefetch" href="/personnal-blog/assets/js/46.640215d1.js"><link rel="prefetch" href="/personnal-blog/assets/js/47.d6292abe.js"><link rel="prefetch" href="/personnal-blog/assets/js/48.8eebcc95.js"><link rel="prefetch" href="/personnal-blog/assets/js/49.a50e77ae.js"><link rel="prefetch" href="/personnal-blog/assets/js/5.adbb23cc.js"><link rel="prefetch" href="/personnal-blog/assets/js/6.43f51bd5.js"><link rel="prefetch" href="/personnal-blog/assets/js/7.38f27899.js"><link rel="prefetch" href="/personnal-blog/assets/js/8.975d02c6.js"><link rel="prefetch" href="/personnal-blog/assets/js/9.8e043322.js">
+    <link rel="stylesheet" href="/personnal-blog/assets/css/0.styles.b7fcd70a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-7dd95ae2><div data-v-7dd95ae2><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>fieemiracle的博客</h3> <p class="description" data-v-59e6cb88>纸上得来终觉浅，绝知此事要躬行~</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>fieemiracle</span>
+          
+        <!---->
+        2022
+      </a></span></div></div> <div class="hide" data-v-7dd95ae2><header class="navbar" data-v-7dd95ae2><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/personnal-blog/" class="home-link router-link-active"><!----> <span class="site-name">fieemiracle的博客</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/personnal-blog/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      目录
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/字节青训营笔记/" class="nav-link"><i class="undefined"></i>
+  字节青训营笔记
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/ES6/" class="nav-link"><i class="undefined"></i>
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Javascript/" class="nav-link"><i class="undefined"></i>
+  Javascript
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/NodeJS/" class="nav-link"><i class="undefined"></i>
+  NodeJS
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Typescript/" class="nav-link"><i class="undefined"></i>
+  Typescript
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Vue Series/" class="nav-link"><i class="undefined"></i>
+  Vue Series
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/手写题/" class="nav-link"><i class="undefined"></i>
+  手写题
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/面试题/" class="nav-link"><i class="undefined"></i>
+  面试题
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/浏览器/" class="nav-link"><i class="undefined"></i>
+  浏览器
+</a></li></ul></div></div><div class="nav-item"><a href="/personnal-blog/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/personnal-blog/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      简历
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/personnal-blog/views/Resume/resume.html" class="nav-link"><i class="undefined"></i>
+  我的简历
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/fieemiracle" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://leetcode.cn/u/fieemiracle/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  Leetcode
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://juejin.cn/user/3316551988553709/posts" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-juejin"></i>
+  稀土掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/fieemiracle" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://mp.csdn.net/mp_blog/manage/article?spm=1010.2135.3001.5448" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-7dd95ae2></div> <aside class="sidebar" data-v-7dd95ae2><div class="personal-info-wrapper" data-v-1fad0c41 data-v-7dd95ae2><img src="/personnal-blog/avatar.jpg" alt="author-avatar" class="personal-img" data-v-1fad0c41> <h3 class="name" data-v-1fad0c41>
+    fieemiracle
+  </h3> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>39</h3> <h6 data-v-1fad0c41>Articles</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>34</h3> <h6 data-v-1fad0c41>Tags</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><a href="/personnal-blog/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      目录
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/字节青训营笔记/" class="nav-link"><i class="undefined"></i>
+  字节青训营笔记
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/ES6/" class="nav-link"><i class="undefined"></i>
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Javascript/" class="nav-link"><i class="undefined"></i>
+  Javascript
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/NodeJS/" class="nav-link"><i class="undefined"></i>
+  NodeJS
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Typescript/" class="nav-link"><i class="undefined"></i>
+  Typescript
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Vue Series/" class="nav-link"><i class="undefined"></i>
+  Vue Series
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/手写题/" class="nav-link"><i class="undefined"></i>
+  手写题
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/面试题/" class="nav-link"><i class="undefined"></i>
+  面试题
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/浏览器/" class="nav-link"><i class="undefined"></i>
+  浏览器
+</a></li></ul></div></div><div class="nav-item"><a href="/personnal-blog/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/personnal-blog/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      简历
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/personnal-blog/views/Resume/resume.html" class="nav-link"><i class="undefined"></i>
+  我的简历
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/fieemiracle" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://leetcode.cn/u/fieemiracle/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  Leetcode
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://juejin.cn/user/3316551988553709/posts" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-juejin"></i>
+  稀土掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/fieemiracle" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://mp.csdn.net/mp_blog/manage/article?spm=1010.2135.3001.5448" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>javascript--闭包知多少</h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>fieemiracle</span>
+          
+        <!---->
+        2022
+      </a></span></div></div> <div data-v-7dd95ae2><div data-v-7dd95ae2><main class="page"><section style="display:;"><div class="page-title"><h1 class="title">javascript--闭包知多少</h1> <div data-v-8a445198><i class="iconfont reco-account" data-v-8a445198><span data-v-8a445198>fieemiracle</span></i> <i class="iconfont reco-date" data-v-8a445198><span data-v-8a445198>7/14/2022</span></i> <i class="iconfont reco-eye" data-v-8a445198><span id="/personnal-blog/handbook/Javascript/clourse.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-8a445198><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="tags iconfont reco-tag" data-v-8a445198><span class="tag-item" data-v-8a445198>闭包</span></i></div></div> <div class="theme-reco-content content__default"><p>本文已参与「新人创作礼」活动，一起开启掘金创作之路。</p> <p>闭包（closure），在JavaScript的学习中，闭包无处不在，与其空谈，不如实干，今天就来了解理解闭包的本质和工作原理吧。</p> <h2 id="一、闭包的概念"><a href="#一、闭包的概念" class="header-anchor">#</a> 一、闭包的概念</h2> <blockquote><p>一个函数和对其周围状态（lexical environment，词法环境）的引用捆绑在一起（或者说函数被引用包围），这样的组合就是闭包（closure）。</p></blockquote> <p>请看以下代码：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function outer(){
+    var name=&quot;来碗盐焗星球&quot;;//局部变量
+    function inner(){//内部函数
+        console.log(name);
+    }
+    inner();
+}
+var name=&quot;小新没蜡笔&quot;;//全局变量
+outer();
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>以上代码，浅显地展示了闭包。实际上，<code>创建函数的同时，闭包也会随之产生</code>。也就是说，inner实际上就是一个闭包！因为inner内部本身没有name变量，但是确确实实打印了值，这就说明inner可以访问其外部函数的变量（局部变量），与此同时，<code>闭包刚好就是能够读取其他函数内部变量的函数</code>，这里可以简单地理解为，闭包可能就是函数内部的子函数，同时它能够访问。</p> <p>但是这不意味着，可以访问外部函数的函数就是一个闭包，而是，是闭包让你可以在一个内层函数中访问到其外层函数的作用域。虽然有点绕，但是理解了本质就迎刃而解了。</p> <p>再看一个常见的闭包效果：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function doConsole(name){
+    setTimeout(()=&gt;{
+        console.log(name);//来碗盐焗星球
+    },1000);
+}
+doConsole(&quot;来碗盐焗星球&quot;);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>这个例子是常见的定时器，定时器里面的内部匿名函数是回调函数，这是观察闭包效果很好的例子。这个匿名函数作为参数传递给了setTimeout，同时具有函数doConsole作用域的闭包，可以访问到变量name的引用。而在doConsole函数执行完毕之后，它的内部作用域不会被销毁，这就是闭包的神奇之处了。</p> <h2 id="二、闭包的作用"><a href="#二、闭包的作用" class="header-anchor">#</a> 二、闭包的作用</h2> <p>兜兜转转，还是得从闭包的作用出发，方能理解闭包。还记得AO对象和GO对象嘛？不记得<a href="https://juejin.cn/post/7116516393100853284" target="_blank" rel="noopener noreferrer">戳这里<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>。</p> <p>（1）实现共有变量（模块化）</p> <blockquote><p>实现共有变量（模块化），全局变量能够通过闭包实现局部（私有）。
+例如：累加器</p></blockquote> <div class="language- line-numbers-mode"><pre class="language-text"><code> // count是全局变量，污染全局
+ var count=0;
+ function add(){
+     return count++;
+ } 
+ console.log(add());//0
+ console.log(add());//1
+ console.log(add());//2
+
+ // count不是全局变量
+function add() {
+    var count=0;
+    function a() {
+        count++;
+        // return count;
+        console.log(count);//1
+    }
+    return a;
+}
+var res = add();
+res()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><p>（2）做缓存</p> <blockquote><p>函数一旦被执行完毕，其内存就会被销毁，而闭包的存在，就可以保有内部环境的作用域。</p></blockquote> <div class="language- line-numbers-mode"><pre class="language-text"><code>function fruit() {
+    var food = 'apple'
+    var people = {
+      eatFood: function() {
+        if (food !== '') {
+          console.log('还有 ' + food);
+          food = ''
+        } else {
+          console.log('没水果了');
+        }
+      },
+      pushFood: function(myfood) {
+        food = myfood
+      }
+    }
+    return people
+  }
+  var person = fruit()
+  person.eatFood()//还有 apple
+  person.eatFood()//没水果了
+  person.pushFood('banana')
+  person.eatFood()//还有 banana
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><p>（3）实现私有化</p> <blockquote><p>--闭包可以实现封装，是一种保护私有变量的机制，在函数执行时形成私有的作用域，保护里面的私有变量不受外界干扰。直观的说就是形成一个不销毁的栈环境，使函数可以继续访问定义时的词法作用域。</p></blockquote> <div class="language- line-numbers-mode"><pre class="language-text"><code>var name=&quot;开心超人&quot;
+function outer(){
+    var name=&quot;来碗盐焗星球&quot;;
+    function inner(){
+        console.log(name);
+    }
+    // inner();
+    return inner;//inner在使用内部作用域
+}
+var doOuter=outer();这里outer函数已经被调用了！但是因为inner被return，outer的内部作用域依然存在
+doOuter();//这就是闭包
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>按照<code>垃圾回收机制</code>，outer执行完毕是会被回收的，释放内存，但是因为闭包的存在，闭包会阻止垃圾回收的进行，所以outer的内部作用域依然存在，依然可以被内部函数访问到。</p> <p>（4）模块化开发</p> <blockquote><p>--模块化开发可以防止污染全局变量</p> <p>模块函数也可以传参数，模块函数具备条件：</p> <p>（1）有外部的封闭函数，且该函数至少被调用一次，每次调用都会创建一个新的模块实例</p> <p>（2）封闭函数必须返回至少一个内部函数，便于在私有作用域形成闭包，且可以访问或者修改私有状态</p></blockquote> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 模块函数
+function aModule(){
+    var name=&quot;来碗盐焗星球&quot;
+    function inner(){
+        console.log(name);
+    }
+
+    return {inner:inner}
+}
+var doModule=aModule();
+doModule.inner();
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h2 id="三、闭包的缺陷"><a href="#三、闭包的缺陷" class="header-anchor">#</a> 三、闭包的缺陷</h2> <h3 id="_1-内存泄漏"><a href="#_1-内存泄漏" class="header-anchor">#</a> （1）内存泄漏</h3> <blockquote><p>--简而言之，内存泄漏就是可用空间变小的现象</p> <p>--闭包会导致原有的作用域链不释放，导致<code>内存泄漏</code></p></blockquote> <div class="language- line-numbers-mode"><pre class="language-text"><code>function b(){
+       var a=123;
+      b();//这里b已经被调用一次
+}
+b();
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="四、闭包的应用场景"><a href="#四、闭包的应用场景" class="header-anchor">#</a> 四、闭包的应用场景</h2> <p>闭包其实无处不在，但凡<code>使用了回调函数的，实际上就是在使用闭包</code>。接下来我们来瞅一瞅闭包的经典应用场景。</p> <h3 id="_1-定时器"><a href="#_1-定时器" class="header-anchor">#</a> （1）定时器</h3> <p>定时器的第一个参数接收一个回调函数，这个回调函数可以是匿名的，具名的，也可以是箭头函数。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>let name = &quot;来碗盐焗星球&quot;;
+setTimeout(function timeHandler() {
+    console.log(name);//来碗盐焗星球
+}, 1000)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="_2-事件监听器"><a href="#_2-事件监听器" class="header-anchor">#</a> （2）事件监听器</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;style&gt;
+    .box{
+       width: 100px;
+       height: 100px;
+       background-color: #bfa;
+    }
+&lt;/style&gt;
+&lt;body&gt;
+    &lt;button id=&quot;btn&quot;&gt;点我试试&lt;/button&gt;
+    &lt;button id=&quot;btn01&quot;&gt;再点以下试试&lt;/button&gt;
+    &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+​
+    &lt;script&gt;
+        var btn=document.getElementById('btn');
+        var btn01=document.getElementById('btn01');
+        var box=document.querySelector('.box')
+        btn.addEventListener('click',function(){//事件监听器，第二个参数就是一个回调函数，也可以写成箭头函数...
+            box.style.backgroundColor='pink'
+        });
+​
+        btn01.onclick=function(){
+            box.style.backgroundColor='red'
+        };
+    &lt;/script&gt;
+&lt;/body&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><h3 id="_3-return一个函数"><a href="#_3-return一个函数" class="header-anchor">#</a> （3）return一个函数</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>var name = '来碗盐焗星球';
+function fn() {
+    var name = 20;
+    function f() {
+        console.log(name);//蜡笔小新?
+    }
+    f();
+    return f;//此处函数引用，导致fn()执行完毕后，栈内存不会被销毁
+}
+var doName = fn();
+doName();//蜡笔小新??
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h3 id="_4-异步编程"><a href="#_4-异步编程" class="header-anchor">#</a> （4）异步编程</h3> <p>其实异步编程有很多类型，比如Ajax异步，Promise函数，async函数。。。，我们以Promise举例：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>let myPromise=new Promise(function(myResolve,myReject){
+    var num=6;
+    if(num==6){
+        myResolve();//成功函数
+    }else{
+        myReject();//失败函数，这两个也是回调函数
+    }
+});
+myPromise.then(
+    function(value){
+        console.log('you are right!!');
+    },
+    function(error){
+        console.log('error!!');
+    }
+)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><h3 id="_5-iife模式"><a href="#_5-iife模式" class="header-anchor">#</a> （5）IIFE模式</h3> <p>什么是IIFE模式？IIFE模式其实就是比较适合研究闭包的自执行函数。自执行函数也是可以传参的。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>var name = '来碗盐焗星球';
+(function doName() {
+    console.log(name);//来碗盐焗星球
+})();
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="_6-for循环和闭包"><a href="#_6-for循环和闭包" class="header-anchor">#</a> （6）for循环和闭包</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>function foo() {
+    for (var i = 0; i &lt; 10; i++) {
+        // (function (j) {//循环和自执行函数--闭包
+        //     setTimeout(function () {
+        //         console.log(j);
+        //     }, 1000 * j)
+        // })(i);//
+        setTimeout(function () {//for循环和定时器回调函数--闭包
+            console.log(j);
+        }, 1000, i)
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h3 id="_7-块作用域和闭包"><a href="#_7-块作用域和闭包" class="header-anchor">#</a> （7）块作用域和闭包</h3> <p>块作用域，在<a href="https://juejin.cn/post/7116516393100853284" target="_blank" rel="noopener noreferrer">作用域和作用域链<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>一文中，提到过，像我们接触的let作用域，代码块{}，for循环用let时的作用域，if,while,switch等等。我们以let为例：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>for(let i=1;i&lt;6;i++){
+    setTimeout(()=&gt;{
+        console.log(i);
+    },i*1000);
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>我们必须知道的是，for循环头部的let声明会使得变量不止被声明一次，这使得结果依次，每隔i*1000，打印1,2,3,4,5.其实这个代码是以下代码演变而来的：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>
+for(var i=0;i&lt;=5;i++){
+    let j=i;//此处便是闭包的块作用域
+    setTimeout(()=&gt;{
+        console.log(j);
+    },j*1000)
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h3 id="_8-函数作为参数"><a href="#_8-函数作为参数" class="header-anchor">#</a> （8）函数作为参数</h3> <p>其实函数作为参数跟回调函数具有异曲同工的效果，请看下面代码：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>var a = '来碗盐焗星球';
+function outer() {
+    var a = '小猪佩奇';
+    function inner() {
+        console.log(a);//小猪佩奇
+    }
+    return inner;//此处return的是函数引用
+}
+
+function other(func) {//定义形参传入一个函数
+    var a = '小狗汪汪队';
+   func();//在此处调用形参
+}
+other(outer());//实参为outer函数，根据词法作用域  小猪佩奇
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>以上便是一些简单的闭包使用场景了，简单来说，<code>当一个函数被保存到了外部，将会产生闭包</code>。相信你已经能在慢慢代码海里，一眼认出闭包的。闭包的应用场景总结不是很全面，欢迎评论区补充哟~。</p></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">12/18/2022, 5:18:06 PM</span></div></footer> <!----> <div class="comments-wrapper"><!----></div></main></div> <!----></div> <ul class="sub-sidebar sub-sidebar-wrapper" style="width:12rem;" data-v-b57cc07c data-v-7dd95ae2><li class="level-2" data-v-b57cc07c><a href="/personnal-blog/handbook/Javascript/clourse.html#一、闭包的概念" class="sidebar-link reco-side-一、闭包的概念" data-v-b57cc07c>一、闭包的概念</a></li><li class="level-2" data-v-b57cc07c><a href="/personnal-blog/handbook/Javascript/clourse.html#二、闭包的作用" class="sidebar-link reco-side-二、闭包的作用" data-v-b57cc07c>二、闭包的作用</a></li><li class="level-2" data-v-b57cc07c><a href="/personnal-blog/handbook/Javascript/clourse.html#三、闭包的缺陷" class="sidebar-link reco-side-三、闭包的缺陷" data-v-b57cc07c>三、闭包的缺陷</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/Javascript/clourse.html#_1-内存泄漏" class="sidebar-link reco-side-_1-内存泄漏" data-v-b57cc07c>（1）内存泄漏</a></li><li class="level-2" data-v-b57cc07c><a href="/personnal-blog/handbook/Javascript/clourse.html#四、闭包的应用场景" class="sidebar-link reco-side-四、闭包的应用场景" data-v-b57cc07c>四、闭包的应用场景</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/Javascript/clourse.html#_1-定时器" class="sidebar-link reco-side-_1-定时器" data-v-b57cc07c>（1）定时器</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/Javascript/clourse.html#_2-事件监听器" class="sidebar-link reco-side-_2-事件监听器" data-v-b57cc07c>（2）事件监听器</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/Javascript/clourse.html#_3-return一个函数" class="sidebar-link reco-side-_3-return一个函数" data-v-b57cc07c>（3）return一个函数</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/Javascript/clourse.html#_4-异步编程" class="sidebar-link reco-side-_4-异步编程" data-v-b57cc07c>（4）异步编程</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/Javascript/clourse.html#_5-iife模式" class="sidebar-link reco-side-_5-iife模式" data-v-b57cc07c>（5）IIFE模式</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/Javascript/clourse.html#_6-for循环和闭包" class="sidebar-link reco-side-_6-for循环和闭包" data-v-b57cc07c>（6）for循环和闭包</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/Javascript/clourse.html#_7-块作用域和闭包" class="sidebar-link reco-side-_7-块作用域和闭包" data-v-b57cc07c>（7）块作用域和闭包</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/Javascript/clourse.html#_8-函数作为参数" class="sidebar-link reco-side-_8-函数作为参数" data-v-b57cc07c>（8）函数作为参数</a></li></ul></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:190px;display:none;" data-v-5775ee02>
+      我是bookbook,欢迎你的关注 
+    </div> <div class="operation" style="right:90px;bottom:40px;display:;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:;" data-v-5775ee02></i></div> <canvas id="banniang" width="150" height="219" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div><div class="reco-bgm-panel" data-v-b1d3339e><audio id="bgm" src="https://assets.smallsunnyfox.com/music/2.mp3" data-v-b1d3339e></audio> <div class="reco-float-box" style="bottom:200px;z-index:999999;display:none;" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><img src="https://p1.music.126.net/Gxv6d9W4Yd9q9WNHPpi8rw==/1379887104073348.jpg" data-v-b1d3339e></div> <div class="reco-bgm-box" style="left:10px;bottom:10px;z-index:999999;" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><div class="reco-bgm-cover" style="background-image:url(https://p1.music.126.net/Gxv6d9W4Yd9q9WNHPpi8rw==/1379887104073348.jpg);" data-v-b1d3339e><div class="mini-operation" style="display:none;" data-v-b1d3339e><i class="reco-bgm reco-bgm-pause" style="display:none;" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-play" style="display:none;" data-v-b1d3339e></i></div> <div class="falut-message" style="display:none;" data-v-b1d3339e>
+          播放失败
+        </div></div> <div class="reco-bgm-info" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><div class="info-box" data-v-b1d3339e><i class="reco-bgm reco-bgm-music music" data-v-b1d3339e></i>Faster Than Light</div> <div class="info-box" data-v-b1d3339e><i class="reco-bgm reco-bgm-artist" data-v-b1d3339e></i>Andreas Waldetoft / Mia Stegmar</div> <div class="reco-bgm-progress" data-v-b1d3339e><div class="progress-bar" data-v-b1d3339e><div class="bar" data-v-b1d3339e></div></div></div> <div class="reco-bgm-operation" data-v-b1d3339e><i class="reco-bgm reco-bgm-last last" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-pause pause" style="display:none;" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-play play" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-next next" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-volume1 volume" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-mute mute" style="display:none;" data-v-b1d3339e></i> <div class="volume-bar" data-v-b1d3339e><div class="bar" data-v-b1d3339e></div></div></div></div> <div class="reco-bgm-left-box" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><i class="reco-bgm reco-bgm-left" data-v-b1d3339e></i></div></div></div><div></div><canvas id="vuepress-canvas-cursor"></canvas><!----><div class="RibbonAnimation"></div></div></div>
+    <script src="/personnal-blog/assets/js/app.eb925b14.js" defer></script><script src="/personnal-blog/assets/js/3.82b7d1e8.js" defer></script><script src="/personnal-blog/assets/js/1.581215d2.js" defer></script><script src="/personnal-blog/assets/js/22.25f6087c.js" defer></script>
+  </body>
+</html>

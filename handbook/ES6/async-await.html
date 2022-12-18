@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>消灭异步回调，还得是async-await | fieemiracle的博客</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/personnal-blog/favicon.ico">
+    <meta name="description" content="纸上得来终觉浅，绝知此事要躬行~">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/personnal-blog/assets/css/0.styles.b7fcd70a.css" as="style"><link rel="preload" href="/personnal-blog/assets/js/app.eb925b14.js" as="script"><link rel="preload" href="/personnal-blog/assets/js/3.82b7d1e8.js" as="script"><link rel="preload" href="/personnal-blog/assets/js/1.581215d2.js" as="script"><link rel="preload" href="/personnal-blog/assets/js/15.03a26f1e.js" as="script"><link rel="prefetch" href="/personnal-blog/assets/js/10.c1074edc.js"><link rel="prefetch" href="/personnal-blog/assets/js/11.580d9231.js"><link rel="prefetch" href="/personnal-blog/assets/js/12.bf4f7a5b.js"><link rel="prefetch" href="/personnal-blog/assets/js/13.ae9a8761.js"><link rel="prefetch" href="/personnal-blog/assets/js/14.52ae5247.js"><link rel="prefetch" href="/personnal-blog/assets/js/16.5b6692de.js"><link rel="prefetch" href="/personnal-blog/assets/js/17.0e9f6058.js"><link rel="prefetch" href="/personnal-blog/assets/js/18.5877e58c.js"><link rel="prefetch" href="/personnal-blog/assets/js/19.736ba708.js"><link rel="prefetch" href="/personnal-blog/assets/js/20.87379000.js"><link rel="prefetch" href="/personnal-blog/assets/js/21.090f5a62.js"><link rel="prefetch" href="/personnal-blog/assets/js/22.25f6087c.js"><link rel="prefetch" href="/personnal-blog/assets/js/23.6f79cf9d.js"><link rel="prefetch" href="/personnal-blog/assets/js/24.8f53790a.js"><link rel="prefetch" href="/personnal-blog/assets/js/25.25acc6cb.js"><link rel="prefetch" href="/personnal-blog/assets/js/26.03692726.js"><link rel="prefetch" href="/personnal-blog/assets/js/27.18c3b62b.js"><link rel="prefetch" href="/personnal-blog/assets/js/28.12adaacd.js"><link rel="prefetch" href="/personnal-blog/assets/js/29.b4c0da75.js"><link rel="prefetch" href="/personnal-blog/assets/js/30.88ab72ba.js"><link rel="prefetch" href="/personnal-blog/assets/js/31.60c833fa.js"><link rel="prefetch" href="/personnal-blog/assets/js/32.103ab689.js"><link rel="prefetch" href="/personnal-blog/assets/js/33.e1013157.js"><link rel="prefetch" href="/personnal-blog/assets/js/34.c9c2ba52.js"><link rel="prefetch" href="/personnal-blog/assets/js/35.e89b1e9d.js"><link rel="prefetch" href="/personnal-blog/assets/js/36.da7f727c.js"><link rel="prefetch" href="/personnal-blog/assets/js/37.d340480c.js"><link rel="prefetch" href="/personnal-blog/assets/js/38.5fd1dc3c.js"><link rel="prefetch" href="/personnal-blog/assets/js/39.e70cb200.js"><link rel="prefetch" href="/personnal-blog/assets/js/4.df85215d.js"><link rel="prefetch" href="/personnal-blog/assets/js/40.2482b706.js"><link rel="prefetch" href="/personnal-blog/assets/js/41.a9cb5d8d.js"><link rel="prefetch" href="/personnal-blog/assets/js/42.09eab8e0.js"><link rel="prefetch" href="/personnal-blog/assets/js/43.d1ef214c.js"><link rel="prefetch" href="/personnal-blog/assets/js/44.ed96d3e1.js"><link rel="prefetch" href="/personnal-blog/assets/js/45.6ae3df0e.js"><link rel="prefetch" href="/personnal-blog/assets/js/46.640215d1.js"><link rel="prefetch" href="/personnal-blog/assets/js/47.d6292abe.js"><link rel="prefetch" href="/personnal-blog/assets/js/48.8eebcc95.js"><link rel="prefetch" href="/personnal-blog/assets/js/49.a50e77ae.js"><link rel="prefetch" href="/personnal-blog/assets/js/5.adbb23cc.js"><link rel="prefetch" href="/personnal-blog/assets/js/6.43f51bd5.js"><link rel="prefetch" href="/personnal-blog/assets/js/7.38f27899.js"><link rel="prefetch" href="/personnal-blog/assets/js/8.975d02c6.js"><link rel="prefetch" href="/personnal-blog/assets/js/9.8e043322.js">
+    <link rel="stylesheet" href="/personnal-blog/assets/css/0.styles.b7fcd70a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-7dd95ae2><div data-v-7dd95ae2><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>fieemiracle的博客</h3> <p class="description" data-v-59e6cb88>纸上得来终觉浅，绝知此事要躬行~</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>fieemiracle</span>
+          
+        <!---->
+        2022
+      </a></span></div></div> <div class="hide" data-v-7dd95ae2><header class="navbar" data-v-7dd95ae2><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/personnal-blog/" class="home-link router-link-active"><!----> <span class="site-name">fieemiracle的博客</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/personnal-blog/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      目录
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/字节青训营笔记/" class="nav-link"><i class="undefined"></i>
+  字节青训营笔记
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/ES6/" class="nav-link"><i class="undefined"></i>
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Javascript/" class="nav-link"><i class="undefined"></i>
+  Javascript
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/NodeJS/" class="nav-link"><i class="undefined"></i>
+  NodeJS
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Typescript/" class="nav-link"><i class="undefined"></i>
+  Typescript
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Vue Series/" class="nav-link"><i class="undefined"></i>
+  Vue Series
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/手写题/" class="nav-link"><i class="undefined"></i>
+  手写题
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/面试题/" class="nav-link"><i class="undefined"></i>
+  面试题
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/浏览器/" class="nav-link"><i class="undefined"></i>
+  浏览器
+</a></li></ul></div></div><div class="nav-item"><a href="/personnal-blog/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/personnal-blog/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      简历
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/personnal-blog/views/Resume/resume.html" class="nav-link"><i class="undefined"></i>
+  我的简历
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/fieemiracle" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://leetcode.cn/u/fieemiracle/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  Leetcode
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://juejin.cn/user/3316551988553709/posts" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-juejin"></i>
+  稀土掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/fieemiracle" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://mp.csdn.net/mp_blog/manage/article?spm=1010.2135.3001.5448" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-7dd95ae2></div> <aside class="sidebar" data-v-7dd95ae2><div class="personal-info-wrapper" data-v-1fad0c41 data-v-7dd95ae2><img src="/personnal-blog/avatar.jpg" alt="author-avatar" class="personal-img" data-v-1fad0c41> <h3 class="name" data-v-1fad0c41>
+    fieemiracle
+  </h3> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>39</h3> <h6 data-v-1fad0c41>Articles</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>34</h3> <h6 data-v-1fad0c41>Tags</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><a href="/personnal-blog/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      目录
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/字节青训营笔记/" class="nav-link"><i class="undefined"></i>
+  字节青训营笔记
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/ES6/" class="nav-link"><i class="undefined"></i>
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Javascript/" class="nav-link"><i class="undefined"></i>
+  Javascript
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/NodeJS/" class="nav-link"><i class="undefined"></i>
+  NodeJS
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Typescript/" class="nav-link"><i class="undefined"></i>
+  Typescript
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/Vue Series/" class="nav-link"><i class="undefined"></i>
+  Vue Series
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/手写题/" class="nav-link"><i class="undefined"></i>
+  手写题
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/面试题/" class="nav-link"><i class="undefined"></i>
+  面试题
+</a></li><li class="dropdown-item"><!----> <a href="/personnal-blog/categories/浏览器/" class="nav-link"><i class="undefined"></i>
+  浏览器
+</a></li></ul></div></div><div class="nav-item"><a href="/personnal-blog/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/personnal-blog/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      简历
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/personnal-blog/views/Resume/resume.html" class="nav-link"><i class="undefined"></i>
+  我的简历
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/fieemiracle" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://leetcode.cn/u/fieemiracle/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  Leetcode
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://juejin.cn/user/3316551988553709/posts" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-juejin"></i>
+  稀土掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/fieemiracle" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://mp.csdn.net/mp_blog/manage/article?spm=1010.2135.3001.5448" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>消灭异步回调，还得是async-await</h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>fieemiracle</span>
+          
+        <!---->
+        2022
+      </a></span></div></div> <div data-v-7dd95ae2><div data-v-7dd95ae2><main class="page"><section style="display:;"><div class="page-title"><h1 class="title">消灭异步回调，还得是async-await</h1> <div data-v-8a445198><i class="iconfont reco-account" data-v-8a445198><span data-v-8a445198>fieemiracle</span></i> <i class="iconfont reco-date" data-v-8a445198><span data-v-8a445198>7/20/2022</span></i> <i class="iconfont reco-eye" data-v-8a445198><span id="/personnal-blog/handbook/ES6/async-await.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-8a445198><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="tags iconfont reco-tag" data-v-8a445198><span class="tag-item" data-v-8a445198>async-await</span></i></div></div> <div class="theme-reco-content content__default"><p>本文已参与「新人创作礼」活动，一起开启掘金创作之路。</p> <p>本篇，带你读懂async~await间的浪漫。</p> <p>关于异步处理问题，ES5的回调让我们陷入回调地狱轮回，后来ES6的Promise（<a href="https://juejin.cn/post/7122028062702567455" target="_blank" rel="noopener noreferrer">Promise不了解？点这了解<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>）让我们脱离轮回，终于，ES7的async-await带我们走向光明。今天我们就来学习一夏 async-await，看看与Promise有何联系和区别。</p> <h2 id="一、走进async-await原理"><a href="#一、走进async-await原理" class="header-anchor">#</a> 一、走进Async-await原理</h2> <h3 id="_1、原理1"><a href="#_1、原理1" class="header-anchor">#</a> 1、原理1</h3> <p><code>async函数返回一个 Promise 对象，可以使用then方法添加回调函数</code>。举例说明：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// async返回的是Promise对象？
+async function testAsync() {
+    return 'hello';//上篇文章Promise对象的返回值如果不是Promise，会通过Promise.resolve()转化为Promise，再进行处理
+}
+const result = testAsync()
+console.log(result);//Promise { 'hello' }  说明async返回的是Promise对象
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>那既然async返回的是Promise对象，那么async后面的函数可以接.then()或者.catch()...嘛？我们试一试就知道了。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// async返回的是Promise对象,并且可以接Promise的方法？
+async function testAsync() {
+    // await await等待还是promise对象
+    return 'hello'
+}
+testAsync()
+    .then((result)=&gt;{
+        console.log(result);
+    })
+    .catch((error)=&gt;{
+        console.log(error);
+    })
+//hello  妈耶！打印了！说明async返回的是Promise对象，并且可以接Promise的方法，并且！！！默认状态是resolved的
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>上面代码说明，<code>async函数内部return语句返回的值，会成为then方法回调函数的参数</code></p> <h3 id="_2、原理2"><a href="#_2、原理2" class="header-anchor">#</a> 2、原理2</h3> <p><code>当async函数内部抛出错误的时候，会导致返回的 Promise 对象变为reject状态</code>。抛出的错误对象会被.then()方法的第二个回调函数接收或者.catch()方法回调函数接收到。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// async函数内部抛出错误或者Promise状态为reject
+async function testError(){
+    //throw new Error('出错啦~~');
+    await Promise.reject('出错了');//await前面有return和没有return效果一样
+} 
+testError()
+    // .then(()=&gt;{},(error)=&gt;{console.log(error);})
+    .catch(error=&gt;{console.log(error);})
+//Error: 出错啦~~
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h3 id="_3、原理3"><a href="#_3、原理3" class="header-anchor">#</a> 3、原理3</h3> <p><code>await命令后面是一个 Promise 对象，返回该对象的结果。如果不是 Promise 对象，就直接返回对应的值</code>。代码说明：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// await
+async function getName(){
+    // return '来自星星的你';
+    return await '来自星星的你';//上面直接return等价于这个return
+}
+getName()
+    .then(result=&gt;{console.log(result);})
+//来自星星的你
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h3 id="_4、原理4"><a href="#_4、原理4" class="header-anchor">#</a> 4、原理4</h3> <p><code>await的使用，必须要有async</code>。这便是async-await的浪漫所在了：async返回的是一个Promise对象，await等待的就是这个Promise对象，所以await不能没有async（但是async可以没有await）。有没有被浪漫到？反正我是醉了。如果await没有async会怎么样？报错：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// await没有async会报错
+function testAwait(){
+    return await '西红柿炒辣椒'
+}
+testAwait()
+    .catch(error=&gt;{
+        console.log(error);
+    })
+//SyntaxError: await is only valid in async function
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h2 id="二、深入async-await规则"><a href="#二、深入async-await规则" class="header-anchor">#</a> 二、深入Async-await规则</h2> <h3 id="_1、async封装promise"><a href="#_1、async封装promise" class="header-anchor">#</a> 1、async封装Promise</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>// async封装Promise
+async function fn1() {
+    return '喜羊羊与灰太狼';// //相当于return Promise.resolve('喜羊羊与灰太狼')
+    const data = await fn1();//接收data值
+}
+fn1()//执行async函数，返回的是一个Promise对象
+    .then(data =&gt; {
+        console.log('content =', data)
+    })
+​
+//content = 喜羊羊与灰太狼
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h3 id="_2、await相当于then"><a href="#_2、await相当于then" class="header-anchor">#</a> 2、await相当于then</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>// await---.then()
+async function getName(){
+    const operate=Promise.resolve('白雪公主')//执行函数
+    const name= await operate //await相当于Promise的then  operate.then(name=&gt;{})
+    console.log('name:',name)
+}
+getName();
+( async function(){
+    const person=await '七个小矮人' //await Promise.resolve('七个小矮人') await后面不跟Promise，也会被封装成Promise
+    console.log('person:',person)//400
+})();//自执行函数
+​
+//name: 白雪公主
+//person: 七个小矮人
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h3 id="_3、多个await时-按时序执行"><a href="#_3、多个await时-按时序执行" class="header-anchor">#</a> 3、多个await时，按时序执行</h3> <p>当函数执行的时候，一旦遇到await就会先返回，等到异步操作完成，再接着执行函数体内后面的语句。<code>任何一个await语句后面的 Promise 对象变为reject状态，那么整个async函数都会中断执行</code>。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>async function testOrder() {
+    await Promise.reject('出错了')//UnhandledPromiseRejectionWarning: 出错了
+    await Promise.resolve('hello world'); // 不会执行
+}
+testOrder();
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="_4、try-catch相当于catch"><a href="#_4、try-catch相当于catch" class="header-anchor">#</a> 4、try…catch相当于catch</h3> <p>如果希望即使前一个异步操作失败，也不要中断后面的异步操作。可<code>将第一个await放在try...catch结构里面</code>，这样不管这个异步操作是否成功，第二个await都会执行。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// try...catch
+!(async function () {
+    const testError = Promise.reject('出错啦~~~')//rejected状态
+    // const testError=throw new Error('出错啦~~~');
+    try {
+        const result = await testError; //await相当于then，但是reject不会触发then
+        console.log('success:'+result) //不会输出，因为const result = await testError被报错，被catch捕获
+    } catch (error) {
+        console.error('error:'+error)//try...catch 相当于Promise的catch
+    }
+​
+})()
+//error:出错啦~~~
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>当await后面是Promise对象的时候，我们<code>也可直接在await后面直接.catch捕获</code>错误：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>async function testError() {
+    await Promise.reject('出错了')
+        .catch(error =&gt; console.log(error));//这里捕获错误，不会影响下一个await执行
+    
+    return await Promise.resolve('hello world');
+}
+​
+testError()
+    .then(result =&gt; console.log(result))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h2 id="三、解析async-await语法"><a href="#三、解析async-await语法" class="header-anchor">#</a> 三、解析Async-await语法</h2> <p>我们浅浅看一个面试题：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 面试题
+function getJSON() {
+    return new Promise((resolve, reject) =&gt; {
+        setTimeout(() =&gt; {
+            console.log(2);
+            resolve(2)
+        }, 2000)
+    })
+}
+async function testAsync() {
+    await getJSON()
+    console.log(3);
+}
+testAsync()
+//2
+//3
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p>问题当然不会问打印顺序啦，问题是将async await语句解析翻译为Promise？</p> <p>根据现在的知识面，我们必须知道：</p> <blockquote><p>（1）await不能单独出现，其函数前面一定要有async。</p> <p>（2）await会干两件事：</p> <p>第一，将写在await后面的代码放到async创建的那个Promise里面执行。</p> <p>第二、将写在await下面的代码放到前一个创建的那个Promise对象的.then里面执行。</p> <p>（3）await返回的也是Promise对象，他只是把await下面的代码放到了await返回的promise的.then里面执行。</p></blockquote> <p>这样的话，是不是如鱼得水了。翻译如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function getJSON() {
+    return new Promise((resolve, reject) =&gt; {
+        setTimeout(() =&gt; {
+            console.log(2);
+            resolve(2)
+        }, 2000)
+    })
+}
+// 编译成Promise原理
+function testAsync() {
+    return Promise.resolve().then(() =&gt; {
+        return getJSON();
+    })
+        .then(() =&gt; {
+            console.log(3);
+​
+        })
+}
+testAsync()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><h2 id="四、拓展async-await应用"><a href="#四、拓展async-await应用" class="header-anchor">#</a> 四、拓展Async-await应用</h2> <h3 id="_1、场景1"><a href="#_1、场景1" class="header-anchor">#</a> 1、场景1</h3> <p>你学废async-await了嘛？还记得上一篇开篇的回调地狱嘛？我们通过Promise解决回调是这样的：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// Promise解决方式
+function doCallback(n) {
+    var myPromise = new Promise(function (resolve, reject) {   
+        //处理异步任务
+        var flag = true;
+        setTimeout(function () {
+            if (flag) {
+                resolve(n)
+            }
+            else {
+                reject('失败')
+            }
+        },0)
+    })
+    return myPromise;
+}
+​
+doCallback(1)
+    .then((result) =&gt; { //then是成功执行的方法 返回的还是一个Promise对象
+        console.log(result);//打印张三  res是执行
+        return fn(2);
+    })
+    .then((result) =&gt; {
+        console.log(result);
+        return fn(3)
+    })
+    .then((result) =&gt; {
+        console.log(result);
+        return fn(4)
+    })
+    .then((result) =&gt; {
+        console.log(result);
+    })
+    .catch((result) =&gt; { //catch是失败执行的方法
+        console.log(result);
+    })
+    //好多.then,形成.then链啦
+//1
+//2
+//3
+//4
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br></div></div><p>通过以上Promise方法，可以明显解决回调地狱“向右移”的浮夸表现，但是，<code>Promise是基于 then, catch 的链式调用，但也是基于回调函数</code>。.then链多多少少还是违背原生代码，显得也不是很优雅。作为回调终极武器，async-await更加贴近于原生代码，我们看一下吧：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>//封装一个返回promise的异步任务
+function doCallback(str) {
+    var myPromise = new Promise(function (resolve, reject) {
+        var flag = true;
+        setTimeout(function () {
+            if (flag) {
+                resolve(str)
+            } else {
+                reject('处理失败')
+            }
+        })
+    })
+    return myPromise;
+}
+​
+//封装一个执行上述异步任务的async函数
+async function testAsync() {
+    var result1 = await doCallback(1);  //await直接拿到fn()返回的promise的数据，并且赋值给result
+    var result2 = await doCallback(2);  //await 后面的代码，都可以看做是异步回调 callback 里的内容，都是异步的
+    var result3 = await doCallback(3);
+    var result4 = await doCallback(4);
+    console.log(result1);
+    console.log(result2);
+    console.log(result3);
+    console.log(result4);
+}//这样是不是简洁优雅多了呢？
+//执行函数
+testAsync();
+//1
+//2
+//3
+//4
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br></div></div><p>有了 async-await、promise 还有必要学习吗？通过上面async-await的解决方案可以瞧见，<code>async / await 和 Promise 并不互斥，二者相辅相成</code>。同时async / await 并不能改变异步的本质（ js是单线程的，异步需要回调，都是要基于 event loop 来实现(什么是event loop?关注我，等我文章~)）。</p> <h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>现在知道了，async-await是promise的语法糖了吧，不仅让我们书写代码时更加流畅，而且增强了代码的可读性。特别注意的是：虽然async-await 是建立在 Promise机制之上的，但是并不能取代其地位，他们两者相辅相成，息息相关。其实async-await不止是Promise的语法糖，还是Generator的语法糖，Generator是什么？我们下篇见分晓。</p> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9c1c37fd40504326b72a86918f41e6f0~tplv-k3u1fbpfcp-watermark.image?" alt="heiehi.webp"></p></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">12/18/2022, 5:18:06 PM</span></div></footer> <!----> <div class="comments-wrapper"><!----></div></main></div> <!----></div> <ul class="sub-sidebar sub-sidebar-wrapper" style="width:12rem;" data-v-b57cc07c data-v-7dd95ae2><li class="level-2" data-v-b57cc07c><a href="/personnal-blog/handbook/ES6/async-await.html#一、走进async-await原理" class="sidebar-link reco-side-一、走进async-await原理" data-v-b57cc07c>一、走进Async-await原理</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/ES6/async-await.html#_1、原理1" class="sidebar-link reco-side-_1、原理1" data-v-b57cc07c>1、原理1</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/ES6/async-await.html#_2、原理2" class="sidebar-link reco-side-_2、原理2" data-v-b57cc07c>2、原理2</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/ES6/async-await.html#_3、原理3" class="sidebar-link reco-side-_3、原理3" data-v-b57cc07c>3、原理3</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/ES6/async-await.html#_4、原理4" class="sidebar-link reco-side-_4、原理4" data-v-b57cc07c>4、原理4</a></li><li class="level-2" data-v-b57cc07c><a href="/personnal-blog/handbook/ES6/async-await.html#二、深入async-await规则" class="sidebar-link reco-side-二、深入async-await规则" data-v-b57cc07c>二、深入Async-await规则</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/ES6/async-await.html#_1、async封装promise" class="sidebar-link reco-side-_1、async封装promise" data-v-b57cc07c>1、async封装Promise</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/ES6/async-await.html#_2、await相当于then" class="sidebar-link reco-side-_2、await相当于then" data-v-b57cc07c>2、await相当于then</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/ES6/async-await.html#_3、多个await时-按时序执行" class="sidebar-link reco-side-_3、多个await时-按时序执行" data-v-b57cc07c>3、多个await时，按时序执行</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/ES6/async-await.html#_4、try-catch相当于catch" class="sidebar-link reco-side-_4、try-catch相当于catch" data-v-b57cc07c>4、try…catch相当于catch</a></li><li class="level-2" data-v-b57cc07c><a href="/personnal-blog/handbook/ES6/async-await.html#三、解析async-await语法" class="sidebar-link reco-side-三、解析async-await语法" data-v-b57cc07c>三、解析Async-await语法</a></li><li class="level-2" data-v-b57cc07c><a href="/personnal-blog/handbook/ES6/async-await.html#四、拓展async-await应用" class="sidebar-link reco-side-四、拓展async-await应用" data-v-b57cc07c>四、拓展Async-await应用</a></li><li class="level-3" data-v-b57cc07c><a href="/personnal-blog/handbook/ES6/async-await.html#_1、场景1" class="sidebar-link reco-side-_1、场景1" data-v-b57cc07c>1、场景1</a></li><li class="level-2" data-v-b57cc07c><a href="/personnal-blog/handbook/ES6/async-await.html#总结" class="sidebar-link reco-side-总结" data-v-b57cc07c>总结</a></li></ul></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:190px;display:none;" data-v-5775ee02>
+      我是bookbook,欢迎你的关注 
+    </div> <div class="operation" style="right:90px;bottom:40px;display:;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:;" data-v-5775ee02></i></div> <canvas id="banniang" width="150" height="219" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div><div class="reco-bgm-panel" data-v-b1d3339e><audio id="bgm" src="https://assets.smallsunnyfox.com/music/2.mp3" data-v-b1d3339e></audio> <div class="reco-float-box" style="bottom:200px;z-index:999999;display:none;" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><img src="https://p1.music.126.net/Gxv6d9W4Yd9q9WNHPpi8rw==/1379887104073348.jpg" data-v-b1d3339e></div> <div class="reco-bgm-box" style="left:10px;bottom:10px;z-index:999999;" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><div class="reco-bgm-cover" style="background-image:url(https://p1.music.126.net/Gxv6d9W4Yd9q9WNHPpi8rw==/1379887104073348.jpg);" data-v-b1d3339e><div class="mini-operation" style="display:none;" data-v-b1d3339e><i class="reco-bgm reco-bgm-pause" style="display:none;" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-play" style="display:none;" data-v-b1d3339e></i></div> <div class="falut-message" style="display:none;" data-v-b1d3339e>
+          播放失败
+        </div></div> <div class="reco-bgm-info" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><div class="info-box" data-v-b1d3339e><i class="reco-bgm reco-bgm-music music" data-v-b1d3339e></i>Faster Than Light</div> <div class="info-box" data-v-b1d3339e><i class="reco-bgm reco-bgm-artist" data-v-b1d3339e></i>Andreas Waldetoft / Mia Stegmar</div> <div class="reco-bgm-progress" data-v-b1d3339e><div class="progress-bar" data-v-b1d3339e><div class="bar" data-v-b1d3339e></div></div></div> <div class="reco-bgm-operation" data-v-b1d3339e><i class="reco-bgm reco-bgm-last last" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-pause pause" style="display:none;" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-play play" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-next next" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-volume1 volume" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-mute mute" style="display:none;" data-v-b1d3339e></i> <div class="volume-bar" data-v-b1d3339e><div class="bar" data-v-b1d3339e></div></div></div></div> <div class="reco-bgm-left-box" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><i class="reco-bgm reco-bgm-left" data-v-b1d3339e></i></div></div></div><div></div><canvas id="vuepress-canvas-cursor"></canvas><!----><div class="RibbonAnimation"></div></div></div>
+    <script src="/personnal-blog/assets/js/app.eb925b14.js" defer></script><script src="/personnal-blog/assets/js/3.82b7d1e8.js" defer></script><script src="/personnal-blog/assets/js/1.581215d2.js" defer></script><script src="/personnal-blog/assets/js/15.03a26f1e.js" defer></script>
+  </body>
+</html>
