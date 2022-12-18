@@ -1,6 +1,8 @@
 ---
 title: 码上【call，apply，bind】的手写
 date: 2022-12-02
+isShowComments: true  
+subSidebar: auto
 tags:
  - 手写题
 categories: 

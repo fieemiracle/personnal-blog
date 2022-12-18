@@ -1,5 +1,5 @@
 module.exports = {
-	base: '/myBlog/',
+	base: '/personnal-blog/',
 	title: 'fieemiracle的博客',
 	description: '纸上得来终觉浅，绝知此事要躬行~',
 	theme: 'reco',

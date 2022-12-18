@@ -1,6 +1,8 @@
 ---
 title: 快来学习javascript设计模式
 date: 2022-12-10
+isShowComments: true  
+subSidebar: auto
 tags:
  -扁平化
 categories: 

@@ -1,6 +1,8 @@
 ---
 title: 面试官：你如何实现大文件上传
 date: 2022-12-15
+isShowComments: true  
+subSidebar: auto
 tags:
  -大文件上传
 categories: 

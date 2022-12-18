@@ -1,6 +1,8 @@
 ---
 title: 快来学习javascript设计模式
 date: 2022-12-04
+isShowComments: true  
+subSidebar: auto
 tags:
  - 设计模式
 categories: 

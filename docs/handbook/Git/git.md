@@ -1,6 +1,8 @@
 ---
 title: 工欲善其事，必先利其器（Git）
 date: 2022-11-27
+isShowComments: true  
+subSidebar: auto
 tags:
  - Git
 categories: 

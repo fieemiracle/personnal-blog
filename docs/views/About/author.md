@@ -2,6 +2,8 @@
 title: 关于作者
 date: 2022-10-15 14:20:00
 sidebar: "auto"
+isShowComments: true  
+subSidebar: auto
 ---
 
 <!-- more -->
